@@ -1,0 +1,29 @@
+{
+  "id": "bb216c07-f391-4c29-ae64-51e8aeb8dd9c",
+  "uid": "asperiores-repudiandae-fugiat",
+  "type": "colour-palette",
+  "data": {
+    "colour": [
+      {
+        "name": "disintermediate user-centric content",
+        "light": "#972859",
+        "dark": "#c45b27"
+      },
+      {
+        "name": "embrace next-generation experiences",
+        "light": "#0c2843",
+        "dark": "#89bb61"
+      },
+      {
+        "name": "expedite e-business experiences",
+        "light": "#0d1e53",
+        "dark": "#206657"
+      },
+      {
+        "name": "whiteboard visionary interfaces",
+        "light": "#d9968f",
+        "dark": "#ffdb0c"
+      }
+    ]
+  }
+}

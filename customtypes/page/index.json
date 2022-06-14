@@ -1,0 +1,59 @@
+{
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "ogImage": {
+        "type": "Image",
+        "config": {
+          "label": "Open graph Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "general": {
+              "type": "SharedSlice"
+            },
+            "accordian": {
+              "type": "SharedSlice"
+            },
+            "projects": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

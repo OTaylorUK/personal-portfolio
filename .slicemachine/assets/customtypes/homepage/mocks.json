@@ -1,0 +1,18 @@
+{
+  "id": "eecd74e2-49c1-46ca-8ae5-641708bcaadd",
+  "uid": "aut-et-veniam",
+  "type": "homepage",
+  "data": {
+    "title": "generate world-class solutions",
+    "description": "monetize web-enabled e-tailers",
+    "ogImage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+    }
+  }
+}

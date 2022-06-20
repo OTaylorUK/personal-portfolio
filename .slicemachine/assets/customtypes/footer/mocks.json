@@ -1,0 +1,79 @@
+{
+  "id": "8e778f2b-4e24-484e-a623-680d00d49704",
+  "uid": "laudantium-similique-assumenda",
+  "type": "footer",
+  "data": {
+    "title": [
+      {
+        "type": "paragraph",
+        "text": "Lorem dolore ullamco aliquip reprehenderit nisi quis exercitation do esse cillum tempor ipsum quis voluptate tempor. Cillum pariatur eiusmod minim elit ex ad cillum commodo et nostrud reprehenderit in eiusmod culpa qui.",
+        "spans": []
+      }
+    ],
+    "text": [
+      {
+        "type": "paragraph",
+        "text": "Et labore quis laboris incididunt aliquip non non aliqua et irure. Proident labore qui est officia magna elit id commodo esse.",
+        "spans": []
+      }
+    ],
+    "copyright": "aggregate dot-com interfaces",
+    "altLinks": [
+      {
+        "type": "paragraph",
+        "text": "Veniam qui quis officia cupidatat deserunt Lorem veniam velit nulla tempor elit. Ad veniam sunt enim pariatur nostrud ut aliqua pariatur incididunt ea cillum est ipsum aliqua Lorem.",
+        "spans": []
+      }
+    ],
+    "alternativeContact": [
+      {
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Nostrud nisi sunt nisi amet est pariatur officia enim.",
+            "spans": []
+          }
+        ],
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Reprehenderit enim labore officia voluptate ex dolor magna nisi nostrud. Duis ut elit laboris id.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Consequat non occaecat eiusmod aliquip pariatur Lorem dolor proident ad mollit enim ipsum adipisicing dolore. Fugiat laboris nulla aute officia in commodo ipsum incididunt nisi duis ullamco aliquip veniam eu ipsum.",
+            "spans": []
+          }
+        ],
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Deserunt ullamco aute pariatur incididunt qui pariatur enim veniam. Ex in adipisicing dolore deserunt officia est culpa veniam id adipisicing.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Quis cillum elit officia enim laboris aliqua adipisicing incididunt non in amet.",
+            "spans": []
+          }
+        ],
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Fugiat ad nisi esse sint adipisicing aute sint ad consequat labore reprehenderit.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

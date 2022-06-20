@@ -1,57 +1,53 @@
 {
-  "id": "c665cd22-c391-43ce-88bc-07dc1e8e14c8",
-  "uid": "voluptatem-alias-eum",
+  "id": "db444918-e0bd-4377-ac90-1c144ac1ef16",
+  "uid": "ratione-sit-non",
   "type": "header",
   "data": {
-    "logoText": "matrix collaborative e-commerce",
+    "logoAction": "syndicate back-end action-items",
+    "logoContent": [
+      {
+        "type": "paragraph",
+        "text": "Culpa aliqua esse commodo.",
+        "spans": []
+      }
+    ],
+    "logoTarget": "morph leading-edge blockchains",
     "navItem": [
       {
-        "style": "engage granular e-tailers",
-        "action": "synergize B2B experiences",
+        "style": "brand plug-and-play e-commerce",
+        "action": "enable innovative mindshare",
         "content": [
           {
             "type": "paragraph",
-            "text": "Velit in eu enim eiusmod aliqua nulla sit labore ea. Aliqua labore non laboris voluptate dolor officia adipisicing. Pariatur deserunt mollit nostrud aute magna in ex qui consequat.",
+            "text": "Anim velit ullamco culpa excepteur sint eu et ut officia adipisicing esse excepteur do. Aliquip dolor laboris quis in esse est ex adipisicing et.",
             "spans": []
           }
         ],
-        "target": "visualize impactful models"
+        "target": "whiteboard enterprise e-services"
       },
       {
-        "style": "architect impactful relationships",
-        "action": "innovate back-end paradigms",
+        "style": "cultivate best-of-breed interfaces",
+        "action": "iterate turn-key markets",
         "content": [
           {
             "type": "paragraph",
-            "text": "Pariatur id ad eiusmod sunt aliquip pariatur. Labore veniam reprehenderit velit officia. Elit pariatur labore nostrud pariatur tempor do incididunt laborum sit aliqua pariatur esse do reprehenderit reprehenderit.",
+            "text": "Ea cupidatat magna aute eu aliqua id dolore consequat.",
             "spans": []
           }
         ],
-        "target": "leverage global portals"
+        "target": "deliver open-source applications"
       },
       {
-        "style": "strategize ubiquitous infrastructures",
-        "action": "mesh end-to-end portals",
+        "style": "cultivate real-time applications",
+        "action": "matrix world-class convergence",
         "content": [
           {
             "type": "paragraph",
-            "text": "Sit adipisicing do adipisicing magna aliquip id dolore cupidatat exercitation laborum proident. Exercitation incididunt et sint id Lorem nostrud sint voluptate.",
+            "text": "Pariatur eu ullamco do laborum sunt minim mollit eiusmod exercitation non minim veniam. Cupidatat adipisicing culpa elit minim velit aliqua deserunt anim nisi sit exercitation sunt in ea.",
             "spans": []
           }
         ],
-        "target": "facilitate proactive applications"
-      },
-      {
-        "style": "engineer web-enabled ROI",
-        "action": "integrate interactive e-services",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Incididunt labore ipsum magna tempor exercitation officia aute reprehenderit esse et aute. Irure nostrud enim consectetur ea laboris incididunt adipisicing.",
-            "spans": []
-          }
-        ],
-        "target": "drive bleeding-edge supply-chains"
+        "target": "synergize innovative convergence"
       }
     ]
   }

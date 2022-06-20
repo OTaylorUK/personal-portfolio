@@ -6,8 +6,10 @@ import * as prismicT from "@prismicio/types";
 import { motion, Variants } from "framer-motion";
 
 
-interface SectionHeaderProps {
-    title: prismicT.RichTextField,
+interface SectionTextProps {
+    children: JSX.Element | JSX.Element[],
+    outerClass?: string | null | undefined
+    innerClass?: string| null | undefined
 }
 
 
@@ -30,20 +32,19 @@ const textVariants: Variants = {
 };
 
 
-const SectionHeader = ({ title}:SectionHeaderProps): JSX.Element => {
+const SectionText = ({ outerClass = '', innerClass = 'flex flex-col gap-4' , children}:SectionTextProps): JSX.Element => {
 
   return (
     <>
       <motion.div
-        className="flex flex-row  gap-12   items-center"
+        className={` ${outerClass}`}
         initial="offscreen"
         whileInView="onscreen"
+
         viewport={{ once: false, amount: 0.8 }}
       >
-        <motion.div className={``} variants={textVariants}>
-          <PrismicRichText 
-                field={title}
-            />
+        <motion.div className={` ${innerClass}`}  variants={textVariants}>
+          {children}
         </motion.div>
       </motion.div>
 
@@ -51,4 +52,4 @@ const SectionHeader = ({ title}:SectionHeaderProps): JSX.Element => {
   );
 };
 
-export default SectionHeader;
+export default SectionText;

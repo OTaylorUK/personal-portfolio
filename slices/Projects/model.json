@@ -26,6 +26,15 @@
             "label": "Uid",
             "placeholder": ""
           }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
         }
       },
       "items": {

@@ -5,66 +5,85 @@
     "slice_type": "accordian",
     "items": [
       {
-        "uid": "monetize sticky infomediaries",
+        "uid": "exploit distributed web-readiness",
         "header": [
           {
             "type": "paragraph",
-            "text": "Tempor est sit eu voluptate do. Ea adipisicing fugiat excepteur ut cillum ex non.",
+            "text": "Est id aliqua exercitation et tempor consectetur. Eiusmod pariatur cupidatat irure dolore laboris magna ad.",
             "spans": []
           }
         ],
         "summary": [
           {
             "type": "paragraph",
-            "text": "Mollit laboris ipsum culpa elit amet incididunt ad velit nostrud sunt mollit cupidatat et anim. Duis anim enim ipsum cillum cupidatat nulla sunt velit ad ut anim ullamco ullamco.",
+            "text": "In cupidatat ea deserunt ea consectetur ex labore fugiat laboris officia aute sunt magna sunt do.",
             "spans": []
           }
-        ]
+        ],
+        "website": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
       },
       {
-        "uid": "envisioneer e-business convergence",
+        "uid": "architect interactive portals",
         "header": [
           {
             "type": "paragraph",
-            "text": "Lorem est ad ut sunt reprehenderit mollit magna ipsum laborum eu ut non pariatur labore sit. Dolore id reprehenderit aliquip occaecat pariatur non deserunt in tempor quis aute deserunt magna. Non non nulla dolor laborum irure occaecat ut id Lorem.",
+            "text": "Ea nostrud cillum ad.",
             "spans": []
           }
         ],
         "summary": [
           {
             "type": "paragraph",
-            "text": "Minim ex voluptate amet velit do cillum excepteur id.",
+            "text": "Anim esse ullamco proident sit aute magna laborum amet officia nostrud aliquip tempor excepteur enim exercitation. In id cillum voluptate consectetur dolor sit proident ullamco velit aliqua qui elit enim adipisicing.",
             "spans": []
           }
-        ]
+        ],
+        "website": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
       },
       {
-        "uid": "iterate open-source applications",
+        "uid": "monetize B2C systems",
         "header": [
           {
             "type": "paragraph",
-            "text": "Dolore adipisicing occaecat dolor quis aute labore dolore id nisi esse consequat. Eu culpa sunt cillum ex voluptate sunt dolor sunt in.",
+            "text": "Fugiat laborum aliqua in ad do tempor aute culpa eu enim dolor consectetur cillum. Cillum esse laborum officia consectetur do elit ut velit minim tempor labore nulla elit qui nostrud. Voluptate consequat occaecat commodo proident minim irure non laborum ea anim.",
             "spans": []
           }
         ],
         "summary": [
           {
             "type": "paragraph",
-            "text": "Sunt aliqua aute consequat nisi minim sint cillum cupidatat irure ad ipsum duis. Velit minim proident excepteur anim. Labore laborum adipisicing elit amet fugiat excepteur commodo.",
+            "text": "Adipisicing amet eiusmod sit nulla nostrud veniam incididunt culpa laborum sit velit mollit et. Labore nisi occaecat anim minim anim.",
             "spans": []
           }
-        ]
+        ],
+        "website": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
       }
     ],
     "primary": {
       "title": [
         {
           "type": "heading2",
-          "text": "Whiteboard scalable networks",
+          "text": "Streamline next-generation web-readiness",
           "spans": []
         }
       ],
-      "uid": "expedite dynamic blockchains"
+      "uid": "leverage transparent markets",
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Non minim amet laboris cillum mollit amet cupidatat aute. Consequat dolor nisi sit labore nisi et. Eiusmod reprehenderit nisi ut eiusmod exercitation laborum fugiat cupidatat.",
+          "spans": []
+        }
+      ]
     }
   }
 ]

@@ -8,14 +8,14 @@
       "title": [
         {
           "type": "heading2",
-          "text": "Strategize customized metrics",
+          "text": "Syndicate turn-key eyeballs",
           "spans": []
         }
       ],
       "text": [
         {
           "type": "paragraph",
-          "text": "Voluptate labore labore commodo exercitation occaecat officia labore.",
+          "text": "Sit commodo nulla irure tempor culpa ex esse sunt cupidatat est officia enim. Sint veniam exercitation ipsum esse ex ad magna qui irure dolor eu excepteur.",
           "spans": []
         }
       ],
@@ -26,9 +26,9 @@
         },
         "alt": "Placeholder image",
         "copyright": null,
-        "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
+        "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
       },
-      "uid": "leverage synergistic web-readiness"
+      "uid": "incubate vertical paradigms"
     }
   },
   {
@@ -37,15 +37,23 @@
     "slice_type": "general",
     "items": [
       {
-        "buttonText": "streamline bricks-and-clicks experiences",
+        "buttonText": "target proactive initiatives",
         "buttonLink": {
           "link_type": "Web",
           "url": "https://slicemachine.dev"
         },
-        "buttonStyle": "2"
+        "buttonStyle": "1"
       },
       {
-        "buttonText": "incentivize front-end architectures",
+        "buttonText": "embrace enterprise infrastructures",
+        "buttonLink": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "buttonStyle": "1"
+      },
+      {
+        "buttonText": "target killer functionalities",
         "buttonLink": {
           "link_type": "Web",
           "url": "http://google.com"
@@ -53,30 +61,98 @@
         "buttonStyle": "1"
       },
       {
-        "buttonText": "revolutionize B2C interfaces",
+        "buttonText": "grow turn-key platforms",
+        "buttonLink": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "buttonStyle": "2"
+      },
+      {
+        "buttonText": "repurpose distributed applications",
         "buttonLink": {
           "link_type": "Web",
           "url": "https://slicemachine.dev"
         },
-        "buttonStyle": "1"
+        "buttonStyle": "2"
       }
     ],
     "primary": {
       "title": [
         {
           "type": "heading2",
-          "text": "Enhance next-generation content",
+          "text": "Revolutionize cross-platform deliverables",
           "spans": []
         }
       ],
       "text": [
         {
           "type": "heading1",
-          "text": "Reinvent extensible content",
+          "text": "Disintermediate distributed deliverables",
           "spans": []
         }
       ],
-      "uid": "generate customized systems"
+      "uid": "optimize virtual users"
+    }
+  },
+  {
+    "variation": "techStack",
+    "name": "Tech Stack",
+    "slice_type": "general",
+    "items": [
+      {
+        "name": "scale killer infomediaries",
+        "logo": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "synthesize sexy technologies",
+        "logo": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "extend virtual content",
+        "logo": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Envisioneer holistic platforms",
+          "spans": []
+        }
+      ],
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Irure quis esse qui. Minim laborum occaecat laboris dolore consectetur aliqua officia nisi irure mollit. Occaecat proident dolor do magna occaecat duis est reprehenderit est mollit.",
+          "spans": []
+        }
+      ],
+      "uid": "monetize user-centric infomediaries"
     }
   }
 ]

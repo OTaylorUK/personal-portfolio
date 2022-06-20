@@ -11,14 +11,15 @@ const ColourPalette: FC<ColourProps> = ({palette}) => {
 	let paletteAll = '';
 
 	palette.colour.map(({name,dark,light})=>{
-		console.log(name, dark);
+
+		const niceName = name.toLowerCase().replace(' ', '-')
 
 		if (light) {
-			const lightVal = `--theme-light-${name.toLowerCase()}:${light};`;
+			const lightVal = `--theme-light-${niceName}:${light};`;
 			paletteAll = paletteAll.concat(lightVal);
 		}
 		if (dark) {
-			const darkVal = `--theme-dark-${name.toLowerCase()}:${dark};`;
+			const darkVal = `--theme-dark-${niceName}:${dark};`;
 			paletteAll = paletteAll.concat(darkVal);
 		}
 

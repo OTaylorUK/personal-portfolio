@@ -7,18 +7,18 @@ import { PrismicRichText } from '@prismicio/react';
 
 
 interface ButtonProps {
-  currentPage: string,
-  target: string,
+  currentPage?: string,
+  target?: string,
   type: string,
   actionTarget?: string,
   style: string,
   classList?: string,
-  textFirst: boolean,
+  textFirst?: boolean,
   eventHandler?: any
   icon?: any
   link?: any,
-  text: prismicT.AnyRegularField,
-  content: prismicT.RichTextField
+  text?: prismicT.AnyRegularField,
+  content: prismicT.RichTextField 
 }
 
 // { currentPage = null , btnContext = null, target='_blank', classList ='', type='button', style = 'primary', link, text ='', icon = {}, textFirst = true}
@@ -127,9 +127,7 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
         }else{
           return null
         }
-        
         break;
-    
       default:
         return(
           <button key={`btn`} className={buttonClass}>

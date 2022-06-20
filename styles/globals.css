@@ -13,19 +13,23 @@
 .light{
 	--custom-primary: var(--theme-light-primary);
 	--custom-secondary: var(--theme-light-secondary);
-	--custom-accent: var(--theme-light-accent);
-	--custom-highlight: var(--theme-light-highlight);
-	--custom-text: var(--theme-light-text);
-	--custom-faded: var(--theme-light-faded);
+	--custom-tertiary: var(--theme-light-tertiary);
+	--custom-white: var(--theme-light-white);
+	--custom-faded-dark: var(--theme-light-faded-dark);
+	--custom-faded-light: var(--theme-light-faded-light);
+	--custom-accent-primary: var(--theme-light-accent-primary);
+	--custom-accent-secondary: var(--theme-light-accent-secondary);
 }
 
 .dark{
 	--custom-primary: var(--theme-dark-primary);
 	--custom-secondary: var(--theme-dark-secondary);
-	--custom-accent: var(--theme-dark-accent);
-	--custom-highlight: var(--theme-dark-highlight);
-	--custom-text: var(--theme-dark-text);
-	--custom-faded: var(--theme-dark-faded);
+	--custom-tertiary: var(--theme-dark-tertiary);
+	--custom-white: var(--theme-dark-white);
+	--custom-faded-dark: var(--theme-dark-faded-dark);
+	--custom-faded-light: var(--theme-dark-faded-light);
+	--custom-accent-primary: var(--theme-dark-accent-primary);
+	--custom-accent-secondary: var(--theme-dark-accent-secondary);
 }
 
 
@@ -50,6 +54,10 @@ a {
 
 
 @layer base {
+
+	html, body{
+		@apply bg-custom-white
+	}
 	
 	/* inter var - latin */
 	/* @font-face {
@@ -87,22 +95,33 @@ a {
 	}
 	
 	::selection {
-		@apply text-custom-secondary bg-custom-text
+		@apply text-custom-secondary bg-custom-white
 	}
 
 	h1,h2,h3,h4,h5,h6{
-		@apply font-sans text-custom-text font-bold
+		@apply font-sans text-custom-primary font-bold
 	}
 
-	/* 72px -> 48px -> 30px  */
 	h1 {
-	  @apply   text-3xl  md:text-6xl md:leading-snug  ;
+	  @apply   text-3xl  md:text-7xl md:leading-tight  ;
 	}
 
+	h1 strong{
+		@apply   bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  bg-clip-text animate-text;
+		-webkit-text-fill-color: transparent;
+		/* animation: animated_text 10s ease-in-out infinite;
+		-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite; */
+	}
+
+	h1 strong::selection {
+		/* @apply   bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  bg-clip-text ; */
+		-webkit-text-fill-color:var(--custom-secondary);
+	}
 
 	/* 60px -> 24px  */
 	h2 {
-	  @apply     text-2xl md:text-4xl;
+	  @apply     text-2xl md:text-5xl;
 	}
   
 	/* 48px -> 20px  */
@@ -123,14 +142,18 @@ a {
 
 	/* 72px -> 30px  */
 	p{
-		@apply text-base  font-light text-custom-faded font-inter ;
+		@apply text-base  font-light  font-inter text-custom-faded-dark ;
+	}
+
+	a{
+		@apply text-base  font-light  font-inter text-custom-faded-dark ;
 	}
 
 	p strong{
-		@apply text-custom-accent ;
+		@apply text-custom-accent-primary ;
 	}
 	p a{
-		@apply text-custom-accent hover:underline font-normal;
+		@apply text-custom-accent-primary hover:underline font-normal;
 	}
   
 	html {
@@ -183,18 +206,26 @@ a {
 }
 
 @layer components {
+
+
+
 	.btn{
-		@apply flex flex-wrap gap-1 flex-row items-center justify-center rounded-lg cursor-pointer font-sans text-custom-text 
+		@apply flex flex-wrap gap-4 flex-row items-center justify-center rounded-lg cursor-pointer text-base  text-custom-faded-light  
 	}
 	.btn *{
-		@apply text-inherit font-sans  font-normal text-base
+		@apply font-light  font-inter text-inherit fill-current
 	}
 
 	.btn-default{
-		@apply hover:text-custom-accent
+		@apply p-2 hover:text-custom-accent-primary
 	}
 
+	/* ghost */
 	.btn-ghost{
-		@apply p-4
+		@apply py-3 px-6 border border-custom-accent-primary hover:bg-[#ffb1d91a];
+	}
+	.btn-ghost *{
+		@apply text-custom-accent-primary fill-current
 	}
 }
+

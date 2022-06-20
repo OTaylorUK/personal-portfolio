@@ -3,16 +3,65 @@
     "variation": "default",
     "name": "Default",
     "slice_type": "hero",
-    "items": [],
+    "items": [
+      {
+        "socialContent": [
+          {
+            "type": "paragraph",
+            "text": "Ex incididunt id magna Lorem.",
+            "spans": []
+          }
+        ],
+        "socialLink": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      },
+      {
+        "socialContent": [
+          {
+            "type": "paragraph",
+            "text": "Commodo Lorem aliqua adipisicing sint consectetur aliqua exercitation incididunt ad commodo. Elit cillum exercitation non minim. Elit quis consectetur nostrud.",
+            "spans": []
+          }
+        ],
+        "socialLink": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "socialContent": [
+          {
+            "type": "paragraph",
+            "text": "Cillum laboris laboris in aliqua velit mollit excepteur consectetur ex sit ad. Velit qui nisi pariatur ad enim.",
+            "spans": []
+          }
+        ],
+        "socialLink": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ],
     "primary": {
       "content": [
         {
           "type": "paragraph",
-          "text": "Veniam proident ad laboris magna veniam cupidatat ut commodo irure ex cillum fugiat anim qui. Laboris quis anim irure fugiat excepteur ea culpa officia nulla voluptate culpa. Dolore veniam esse veniam labore ut sit aliqua nulla incididunt deserunt irure adipisicing magna irure.",
+          "text": "Amet ad duis cupidatat ea sunt magna veniam excepteur eiusmod. Officia consectetur incididunt sunt amet pariatur duis.",
           "spans": []
         }
       ],
-      "uid": "integrate world-class e-business"
+      "uid": "extend user-centric portals",
+      "buttonContent": [
+        {
+          "type": "paragraph",
+          "text": "Amet excepteur irure incididunt.",
+          "spans": []
+        }
+      ],
+      "buttonAction": "evolve magnetic web services",
+      "buttonStyle": "morph transparent relationships"
     }
   },
   {
@@ -24,7 +73,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Aute aliquip eu quis mollit est. Nostrud dolore labore elit deserunt fugiat ullamco ut occaecat. Adipisicing voluptate do id exercitation non incididunt mollit.",
+          "text": "Qui aliqua excepteur qui. Laboris dolor eiusmod irure nulla enim tempor aute dolor in nulla ut pariatur. Excepteur tempor minim exercitation irure ut officia voluptate.",
           "spans": []
         }
       ]

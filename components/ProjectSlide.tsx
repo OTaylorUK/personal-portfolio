@@ -7,6 +7,10 @@ import * as prismicT from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import SectionText from "./SectionText";
+import SectionHeader from "./SectionHeader";
+import AnimationWrapper from "./AnimationWrapper";
+import VariableContainer from "./VariableContainer";
 
 
 interface ProjectProps {
@@ -22,23 +26,6 @@ interface ProjectProps {
 
 
 
-const cardVariants: Variants = {
-  offscreen: {
-    y: 300
-  },
-  onscreen: {
-    y: 50,
-    // rotate: -10,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8
-    }
-  }
-};
-
-
-
 const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectProps): JSX.Element => {
     let isOdd = true;
 
@@ -48,43 +35,51 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
   
   return (
 
-    <motion.div
-      className="flex flex-col lg:flex-row  gap-4  justify-center"
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
-    >
-      <motion.div className="flex flex-col lg:flex-row  gap-4  justify-center" variants={cardVariants}>
-        <div className={`flex-1 flex flex-col  gap-6 text-custom-faded ${isOdd ? 'text-left': 'order-2 text-right'}`}>
-            <div className="flex flex-col gap-2">
-                <PrismicRichText 
-                    field={name}
-                />  
-            </div>
+    <VariableContainer containerClass='flex flex-col lg:flex-row  gap-4  justify-center overflow-hidden'>
 
-            <PrismicRichText 
-                field={summary}
-            />  
-            
-            <PrismicRichText 
-                field={tools}
-                components={{
-                    list: ({ children }) =>  <ul className={`flex flex-row row-wrap gap-1 ${isOdd ? 'justify-start': 'justify-end'}`}>{children}</ul>,
+      <div className={`flex flex-col  gap-20 lg:gap-20 relative justify-center  ${isOdd ? 'lg:flex-row' : 'lg:flex-row-reverse'}`} >
+
+        <div className={`flex-1 flex flex-col items-start text-left gap-6 text-custom-faded  absolute lg:static z-10 h-full lg:h-auto  justify-center p-8 lg:p-0 `}>
+            <AnimationWrapper
+              settings={{delay:.2}}
+            >
+              <PrismicRichText 
+                field={name}
+              /> 
+            </AnimationWrapper>
+
+            <AnimationWrapper 
+            settings={{delay:.4}}
+            >
+              <PrismicRichText 
+                  field={summary}
+              /> 
+              <PrismicRichText 
+                  field={tools}
+                  components={{
+                    list: ({ children }) =>  <ul className='flex flex-row row-wrap gap-4'>{children}</ul>,
                   }}
-            />  
+              /> 
+            </AnimationWrapper>
         </div>
-        <div className="flex-1">
-            <Image
-                src={image?.url}
-                alt={image?.alt}
-                width={image?.dimensions?.width}
-                height={image?.dimensions?.height}
-                layout={'responsive'}
-            />
-        </div>
-      </motion.div>
 
-    </motion.div>
+        <AnimationWrapper 
+          settings={{delay:.6}}
+          innerClass={`flex-1`}
+        >
+          <Image
+              src={image?.url}
+              alt={image?.alt}
+              width={image?.dimensions?.width}
+              height={image?.dimensions?.height}
+              layout={'fixed'}
+          />
+        </AnimationWrapper>
+
+      </div>
+
+      </VariableContainer>  
+
 
   );
 };

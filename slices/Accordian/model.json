@@ -26,6 +26,15 @@
             "label": "Uid",
             "placeholder": ""
           }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
         }
       },
       "items": {
@@ -52,6 +61,14 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "website": {
+          "type": "Link",
+          "config": {
+            "label": "Website",
+            "placeholder": "",
+            "select": null
           }
         }
       },

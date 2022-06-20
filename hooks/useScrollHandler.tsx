@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react'
 
+type scrollHandlerProps = "no-scroll" | "hero" | "scrolled"
+
 export const useScrollHandler = () => {
 
-  const [scroll, setScroll] = useState(true);
+  const [scroll, setScroll] = useState<scrollHandlerProps>("no-scroll");
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollCheck = window.scrollY > 10;
-      setScroll(scrollCheck);
+
+      if(window.scrollY > 80 && window.scrollY  < 1000){
+        setScroll("hero");
+      }else if(window.scrollY >= 1000){
+        setScroll("scrolled");
+      }else{
+        setScroll("no-scroll");
+      }
     };
 
     document.addEventListener("scroll", onScroll);

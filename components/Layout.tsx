@@ -3,17 +3,24 @@ import Head from "next/head";
 import React, { FC, Fragment, ReactNode } from "react";
 import ColourPalette from "./ColourPalette";
 import Header from "./Header";
-
-// import { Container } from "../styled-components";
-// import Footer from "./Footer";
-// import Navbar from "./Navbar";
+import * as prismicT from "@prismicio/types";
+import Footer from "./Footer";
 
 interface LayoutProps {
   children?: ReactNode,
   header: {
-    logoText: string,
+    logoAction: string,
+    logoContent:  prismicT.RichTextField,
+    logoTarget: string,
     navItem: any[]
   },
+  footer: {
+    copyright: string,
+    text:  prismicT.RichTextField,
+    title:  prismicT.RichTextField,
+    altLinks:  prismicT.RichTextField,
+    alternativeContact:  any[],
+  }
   palette: {
 		colour: any[]
 	},
@@ -26,7 +33,7 @@ interface LayoutProps {
   };
 }
 
-const Layout: FC<LayoutProps> = ({ children, seo, palette, header }) => {
+const Layout: FC<LayoutProps> = ({ children, seo, palette, header,footer }) => {
 
   
   return (
@@ -35,14 +42,13 @@ const Layout: FC<LayoutProps> = ({ children, seo, palette, header }) => {
         <title>{seo.title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {/* <link rel="preconnect" href="https://fonts.gstatic.com" /> */}
       </Head>
 
       <Header {...header}/>
-      <div className="page-sections overflow-hidden items-center gap-y-48 flex flex-col bg-gradient-to-b bg-gradient  from-custom-primary to-custom-secondary"> 
+      <div className="page-sections mb-20  overflow-hidden items-center gap-y-48 flex flex-col "> 
       {children}
       </div>
-      {/* <Footer /> */}
+      <Footer {...footer} />
       <ColourPalette palette={palette} />
       
     </Fragment>

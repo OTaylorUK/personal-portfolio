@@ -7,11 +7,14 @@ import {
 import Container from '../../../components/Container';
 import SectionHeader from '../../../components/SectionHeader';
 import ProjectSlide from '../../../components/ProjectSlide';
+import SectionText from '../../../components/SectionText';
+import AnimationWrapper from '../../../components/AnimationWrapper';
 
 type ProjectSlice = prismicT.Slice<
 	"project",
 	{
 		title: prismicT.RichTextField;
+		text: prismicT.RichTextField;
 		uid: prismicT.KeyTextField;
 
 	}
@@ -31,7 +34,7 @@ type ProjectSlice = prismicT.Slice<
 const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
 
   const {primary,items, slice_type} = {...slice}
-  const {title, uid} = primary;
+  const {title, text, uid} = primary;
 
   let isOdd = true;
 
@@ -46,8 +49,32 @@ const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
       data-type={slice_type}
       className={`w-full  flex justify-center items-center text-center`}
     >
-    <Container>
-      <SectionHeader title={title} isOdd={isOdd} />
+    <Container 
+      settings={{  
+        inner: {
+          gap: 'gap-20' ,
+          bg: 'bg-custom-faded-light',
+          padding: 'p-20'
+        }
+      }}
+    >
+      <div className={`flex-1 flex flex-col items-center justify-center  gap-6 text-custom-faded`}>
+      <AnimationWrapper 
+        settings={{delay:.2}}
+      >
+        <PrismicRichText 
+            field={title}
+        />
+      </AnimationWrapper>
+
+      <AnimationWrapper 
+        settings={{delay:.4}}
+        >
+        <PrismicRichText 
+          field={text}
+        /> 
+      </AnimationWrapper>
+      </div>
 
       <div className="flex flex-col gap-24 ">
           {items.map((project , i)=>

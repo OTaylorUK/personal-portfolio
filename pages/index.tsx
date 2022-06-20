@@ -8,15 +8,24 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "../prismicio";
 import { components } from "../slices/index.js";
-import ThemeToggle from '../components/themeToggle';
 import Layout from '../components/Layout';
+import * as prismicT from "@prismicio/types";
 
 
 interface Props {
   slices: any[],
   header: {
-    logoText: string,
+    logoAction: string,
+    logoContent:  prismicT.RichTextField,
+    logoTarget: string,
     navItem: any[]
+  },
+  footer: {
+    copyright: string,
+    text:  prismicT.RichTextField,
+    title:  prismicT.RichTextField,
+    altLinks:  prismicT.RichTextField,
+    alternativeContact:  any[],
   }
   colourPalette: {
     colour: any
@@ -30,12 +39,11 @@ interface Props {
   };
 }
 
-const Home: NextPage<Props> = ({slices, seo, colourPalette,header}) => {
+const Home: NextPage<Props> = ({slices, seo, colourPalette,header, footer}) => {
 
-  console.log({slices, seo,colourPalette,header});
   
   return (
-    <Layout seo={seo} palette={colourPalette} header={header}>
+    <Layout seo={seo} palette={colourPalette} header={header} footer={footer}>
       
 
       {/* <ThemeToggle/> */}
@@ -56,7 +64,7 @@ export async function getStaticProps({ previewData }: {previewData: any}) {
   const client = createClient({ previewData });
 
   const header =  await client.getSingle("header");
-  // const footer =  await client.getSingle("footer");
+  const footer =  await client.getSingle("footer");
   const page = await client.getByUID('page', 'home')
   const colourPalette =  await client.getSingle("colour-palette");
 
@@ -72,6 +80,7 @@ export async function getStaticProps({ previewData }: {previewData: any}) {
       slices: page.data?.slices,
       colourPalette: colourPalette?.data,
       header: header?.data,
+      footer: footer?.data,
       seo: {
         title: page.data?.title ? page.data?.title : 'BACKUP title',
         description: page.data?.description ? page.data?.description : 'BACKUP description',

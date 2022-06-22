@@ -86,16 +86,31 @@ a {
 		src: url('/fonts/inter-light.woff2') format('woff2')
 	}
 
-	@font-face {
+	/* @font-face {
 		font-family: 'Metropolis';
 		font-weight: 700;
 		font-style: bold;
 		font-display: swap;
 		src: url('/fonts/Metropolis-Bold.woff2') format('woff2')
+	} */
+	@font-face {
+		font-family: 'SpaceGrotesk';
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+		src: url('/fonts/SpaceGrotesk-Light.woff2') format('woff2')
+	}
+
+	@font-face {
+		font-family: 'SpaceGrotesk';
+		font-weight: 700;
+		font-style: bold;
+		font-display: swap;
+		src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2')
 	}
 	
 	::selection {
-		@apply text-custom-secondary bg-custom-white
+		@apply text-custom-white bg-custom-accent-secondary
 	}
 
 	h1,h2,h3,h4,h5,h6{
@@ -116,12 +131,12 @@ a {
 
 	h1 strong::selection {
 		/* @apply   bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  bg-clip-text ; */
-		-webkit-text-fill-color:var(--custom-secondary);
+		-webkit-text-fill-color:var(--custom-white);
 	}
 
 	/* 60px -> 24px  */
 	h2 {
-	  @apply     text-2xl md:text-5xl;
+	  @apply     text-4xl md:text-5xl;
 	}
   
 	/* 48px -> 20px  */
@@ -153,7 +168,7 @@ a {
 		@apply text-custom-accent-primary ;
 	}
 	p a{
-		@apply text-custom-accent-primary hover:underline font-normal;
+		@apply text-custom-faded-light hover:underline font-normal;
 	}
   
 	html {
@@ -207,13 +222,26 @@ a {
 
 @layer components {
 
+	.form-input{
+		@apply border-none bg-white bg-opacity-10 rounded p-4 overflow-hidden max-h-40
+	}
 
+	.field-group{
+		@apply flex-1 flex  flex-col gap-2
+
+	}
+	.form-helper{
+		@apply text-red-500 text-sm
+	}
+	.form-helper:first-letter{
+		@apply uppercase
+	}
 
 	.btn{
-		@apply flex flex-wrap gap-4 flex-row items-center justify-center rounded-lg cursor-pointer text-base  text-custom-faded-light  
+		@apply flex flex-wrap gap-4 flex-row items-center justify-center rounded-lg cursor-pointer text-base  text-custom-faded-light  font-sans
 	}
 	.btn *{
-		@apply font-light  font-inter text-inherit fill-current
+		@apply font-light  text-inherit fill-current
 	}
 
 	.btn-default{
@@ -222,10 +250,14 @@ a {
 
 	/* ghost */
 	.btn-ghost{
-		@apply py-3 px-6 border border-custom-accent-primary hover:bg-[#ffb1d91a];
+		@apply py-4 px-6 border rounded border-custom-accent-primary text-custom-accent-primary hover:text-custom-white  hover:bg-[#fb4eff1a] hover:bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  animate-text  ;
+
 	}
-	.btn-ghost *{
-		@apply text-custom-accent-primary fill-current
+
+	/* ghost */
+	.btn-ghost-small{
+		@apply btn-ghost py-3;
 	}
+	
 }
 

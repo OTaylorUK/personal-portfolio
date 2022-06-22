@@ -10,6 +10,7 @@ interface AnimationWrapperProps {
     children: JSX.Element | JSX.Element[] ,
     innerClass?: string| null | undefined
     type?: string| null | undefined
+    variantType?: string| null | undefined
     settings?: {
       bounce?: number,
       delay?: number,
@@ -18,16 +19,16 @@ interface AnimationWrapperProps {
 }
 
 
-const AnimationWrapper = ({ type = 'default', innerClass = 'flex flex-col gap-4' , children, settings}:AnimationWrapperProps): JSX.Element => {
+const AnimationWrapper = ({ type = 'default', variantType = 'default', innerClass = 'flex flex-col gap-4' , children, settings}:AnimationWrapperProps): JSX.Element => {
 
   const { 
-    bounce = 0.4,
-    delay = 0.8,
-    duration = 0.8,  
+    bounce = 0.2,
+    delay = 0.45,
+    duration = 0.45,  
   } = {...settings}
 
 
-const textVariants: Variants = {
+const animation: Variants = {
   offscreen: {
     y:'100%' ,
     opacity: 0
@@ -44,11 +45,28 @@ const textVariants: Variants = {
   }
 };
 
+
+const altAnimation: Variants = {
+  offscreen: {
+    opacity: 0
+  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      duration: duration,
+      delay: delay
+    }
+  }
+};
+
+
+
+
 switch (type) {
   case 'ul':
     return (
       <>
-          <motion.ul className={` ${innerClass}`}  variants={textVariants}>
+          <motion.ul className={` ${innerClass}`}  variants={variantType === 'default' ? animation: altAnimation}>
             {children}
           </motion.ul>
   
@@ -59,7 +77,7 @@ switch (type) {
   default:
     return (
       <>
-          <motion.div className={` ${innerClass}`}  variants={textVariants}>
+          <motion.div className={` ${innerClass}`}  variants={variantType === 'default' ? animation: altAnimation}>
             {children}
           </motion.div>
   

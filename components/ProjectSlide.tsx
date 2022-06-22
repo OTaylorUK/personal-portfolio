@@ -37,9 +37,9 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
 
     <VariableContainer containerClass='flex flex-col lg:flex-row  gap-4  justify-center overflow-hidden'>
 
-      <div className={`flex flex-col  gap-20 lg:gap-20 relative justify-center  ${isOdd ? 'lg:flex-row' : 'lg:flex-row-reverse'}`} >
+      <div className={`flex flex-col-reverse gap-8  lg:gap-20 relative justify-center  ${isOdd ? 'lg:flex-row' : 'lg:flex-row-reverse'}`} >
 
-        <div className={`flex-1 flex flex-col items-start text-left gap-6 text-custom-faded  absolute lg:static z-10 h-full lg:h-auto  justify-center p-8 lg:p-0 `}>
+        <div className={`flex-1 flex flex-col items-start text-left gap-6 text-custom-faded   lg:static z-10 h-full lg:h-auto  justify-center lg:p-0 `}>
             <AnimationWrapper
               settings={{delay:.2}}
             >
@@ -64,15 +64,17 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
         </div>
 
         <AnimationWrapper 
-          settings={{delay:.6}}
+          settings={{delay:.4}}
           innerClass={`flex-1`}
+          variantType={'alt'}
         >
           <Image
+          className={`rounded-lg overflow-hidden`}
               src={image?.url}
               alt={image?.alt}
               width={image?.dimensions?.width}
               height={image?.dimensions?.height}
-              layout={'fixed'}
+              layout={'responsive'}
           />
         </AnimationWrapper>
 

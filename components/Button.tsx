@@ -66,6 +66,7 @@ const formatButtonContent = (content: prismicT.RichTextField | null ) : JSX.Elem
     <PrismicRichText 
         field={content}
         components={{
+          paragraph: ({ children }) =>  <>{children}</>,
           image: ({node}) => {
             return(
               <Svg className="icon" no-cors="true" src={node?.url} width={node.dimensions?.width} height={node.dimensions?.height} title={node?.alt ? node?.alt : 'Svg icon inside a button' } />
@@ -91,6 +92,9 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
     case 'ghost':
       variableClass = 'btn-ghost'
       break;
+    case 'ghost-small':
+      variableClass = 'btn-ghost-small'
+      break;
     default:
       variableClass = 'btn-default'
       break;
@@ -115,6 +119,7 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
         if(actionTarget){
           return(
             <ScrollLink 
+              offset={-120}
               to={actionTarget} 
               spy={true} 
               smooth={true}
@@ -138,73 +143,6 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
     }
   
     }
-
-
-
-  // icon svg
-
-  // let setHeight = icon?.customDimension?.height ? icon?.customDimension?.height : icon?.dimensions?.height 
-
-  // let setWidth = icon?.customDimension?.width ? icon?.customDimension?.width : icon?.dimensions?.width 
-
-  // let iconInfo = {
-  //   url: icon?.url ? icon?.url : null ,
-  //   alt: icon?.alt ? `icon of ${icon?.alt}` : 'Icon with no description' ,
-  //   width: setWidth ? `${setWidth}px` : '40px' ,
-  //   height: setHeight ? `${setHeight}px` : 'auto' ,
-  // }
-
-  // let buttonIcon = '';
-
-  // if (iconInfo?.url) {
-  //   buttonIcon = <Svg className="icon" no-cors="true" src={iconInfo?.url} width={iconInfo?.width} height={iconInfo?.height} title={iconInfo?.alt} />
-    
-  // }
-
-
-
-
-
-  // // // content order
-  // // let buttonContent = [
-  // //   buttonText,
-  // //   // buttonIcon,
-  // // ]
-  // // if (!textFirst) {
-  // //   content.reverse()
-  // // }
-
-  // // final class
-  // const buttonClass = classList.concat(` ${isCurrentPage ? 'is-current-page' : ''} btn-style-${style.toLowerCase()}`)
-
-  // const handleClick = ( ) => {
-  //   if(typeof eventHandler === 'function'){
-  //     eventHandler.call()
-  //   }
-  // }
-
-
-  // if (type === 'button') {
-  //   return (
-  //     <button key={`btn`} className={buttonClass}>
-  //       {/* {buttonContent?.map((content, i) => {
-  //         return (
-  //           <div key={`content-${i}`} >
-  //            {content}
-  //           </div>
-  //         )
-  //       })} */}
-  //     </button>
-  //   )
-  // } else {
-  //   return (
-  //     <Link  href={btnHref}>
-  //       <a  onClick={handleClick} key={`link`} className={buttonClass} target={target}>{buttonContent}</a>
-  //     </Link>
-  //   )
-  // }
-
- 
 }
 
 export default Button

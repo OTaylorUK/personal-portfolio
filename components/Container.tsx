@@ -13,6 +13,7 @@ interface ContainerProps {
       outer?: {
         align?: string ,
         justify?: string ,
+        padding?: string ,
       },
       inner?: {
         align?: string ,
@@ -43,6 +44,7 @@ const Container: FC<ContainerProps> = ({ children, settings }) => {
       },
       outer = {
         align: 'items-start' ,
+        padding: 'px-4' ,
       },
       animation = { 
         inViewAmount: 0.2,
@@ -51,6 +53,7 @@ const Container: FC<ContainerProps> = ({ children, settings }) => {
 
     const outerVars = [
       outer?.align,
+      outer?.padding,
     ]
 
     const innerVars = [
@@ -65,15 +68,13 @@ const Container: FC<ContainerProps> = ({ children, settings }) => {
   return (
 
   <motion.div
-    className={`min-h-[30vh] container px-4 lg:px-12 flex flex-col ${outputVariableString(outerVars)}`}
+    className={`min-h-[30vh] container  lg:px-12 flex flex-col ${outputVariableString(outerVars)}`}
     initial="offscreen"
     whileInView="onscreen"
     viewport={{ once: true, amount: animation.inViewAmount }}
   >
-    <div className={`min-h-[30vh] container px-4 lg:px-12 flex flex-col ${outputVariableString(outerVars)}`}>
-        <div className={`content w-full flex flex-col items-start ${outputVariableString(innerVars)}`}>
-            {children}
-        </div>
+    <div className={`content w-full flex flex-col items-start ${outputVariableString(innerVars)}`}>
+        {children}
     </div>
   </motion.div>
   );

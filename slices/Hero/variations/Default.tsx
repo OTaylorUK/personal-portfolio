@@ -53,17 +53,12 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
              ><p className=' text-lg lg:text-xl text-custom-faded-light w-full lg:w-7/12'>{children}</p></AnimationWrapper>,
             }}
           />  
-         <AnimationWrapper 
-            settings={{delay:.6}}
-            innerClass={``}
-          >
-           <Button actionTarget={'about'}  style={buttonStyle !== null ? buttonStyle : 'default'}   type={buttonAction !== null ? buttonAction : 'link'} content={buttonContent} />
-          </AnimationWrapper>
+        
           </div>
      </Container>
 
 
-      <VariableContainer containerClass='absolute bottom-20 right-20 flex flex-col gap-5 items-center'>
+      <VariableContainer containerClass='hidden lg:flex absolute bottom-20 right-20  flex-col gap-5 items-center'>
           <AnimationWrapper 
             settings={{delay:1.5}}
             type='ul'

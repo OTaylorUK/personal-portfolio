@@ -21,7 +21,7 @@ module.exports = {
 
       },
       fontFamily: {
-        'sans': ['"Metropolis"', ...defaultTheme.fontFamily.sans],
+        'sans': ['"SpaceGrotesk"', ...defaultTheme.fontFamily.sans],
         'inter': ['"Inter"', ...defaultTheme.fontFamily.sans],
         // 'serif': ['"EB Garamond"', ...defaultTheme.fontFamily.serif],
         // 'handwriting': ['"Comforter Brush"', ...defaultTheme.fontFamily.mono],

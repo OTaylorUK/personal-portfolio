@@ -10,6 +10,7 @@ import { createClient } from "../prismicio";
 import { components } from "../slices/index.js";
 import Layout from '../components/Layout';
 import * as prismicT from "@prismicio/types";
+import ColourPalette from '../components/ColourPalette';
 
 
 interface Props {
@@ -43,22 +44,17 @@ const Home: NextPage<Props> = ({slices, seo, colourPalette,header, footer}) => {
 
   
   return (
-    <Layout seo={seo} palette={colourPalette} header={header} footer={footer}>
-      
-
-      {/* <ThemeToggle/> */}
-      {/* <Title>Ceci est un simple blog réalisé avec Prismic, Next.js et TypeScript</Title>
-      <CategoryList categories={categories.results} />
-      <CardForm /> */}
+    <>
+    <Layout seo={seo} header={header} footer={footer}>
       <SliceZone 
         slices={slices} 
         components={components}
        />
     </Layout>
+    <ColourPalette palette={colourPalette} />
+    </>
   )
 }
-
-
 
 export async function getStaticProps({ previewData }: {previewData: any}) {
   const client = createClient({ previewData });
@@ -86,13 +82,6 @@ export async function getStaticProps({ previewData }: {previewData: any}) {
         description: page.data?.description ? page.data?.description : 'BACKUP description',
         ogImage: page.data?.ogImage,
       },
-
-      // navigation,
-      // footer,
-      // seo: homePage?.data?.seo[0],
-      // colourPalette,
-      // variablePageData: variablePageData,
-
     },
   };
 }

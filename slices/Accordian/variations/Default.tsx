@@ -75,6 +75,8 @@ const Default = ({ slice,index  }: SliceComponentProps<AccordianSlice>) => {
           <AnimationWrapper 
             settings={{delay:.6}}
             innerClass={`flex-1 flex flex-col align-start    `}
+            variantType={'alt'}
+
           >
               <nav className="flex flex-col gap-24 whitespace-nowrap bg-custom-faded-light text-left">
                 <ul className='flex flex-row'>

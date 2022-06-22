@@ -79,6 +79,8 @@ const Default = ({ slice, index }: SliceComponentProps<GeneralSlice>) => {
           <AnimationWrapper 
             settings={{delay:.6}}
             innerClass={`flex-1`}
+          variantType={'alt'}
+
           >
             <Image
               src={image?.url}

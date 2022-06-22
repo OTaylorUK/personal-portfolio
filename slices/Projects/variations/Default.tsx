@@ -51,14 +51,17 @@ const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
     >
     <Container 
       settings={{  
+        outer: {
+          padding: 'p-0 lg:px-4'
+        },
         inner: {
           gap: 'gap-20' ,
           bg: 'bg-custom-faded-light',
-          padding: 'p-20'
+          padding: 'py-10 px-4 lg:p-20'
         }
       }}
     >
-      <div className={`flex-1 flex flex-col items-center justify-center  gap-6 text-custom-faded`}>
+      <div className={`flex-1 flex flex-col items-center justify-center  gap-6 text-custom-faded px-6 lg:w-8/12 m-auto`}>
       <AnimationWrapper 
         settings={{delay:.2}}
       >
@@ -76,7 +79,7 @@ const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
       </AnimationWrapper>
       </div>
 
-      <div className="flex flex-col gap-24 ">
+      <div className="flex flex-col gap-8 lg:gap-24 ">
           {items.map((project , i)=>
             <ProjectSlide 
               index={i}

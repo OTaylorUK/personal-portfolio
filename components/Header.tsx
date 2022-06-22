@@ -1,10 +1,12 @@
 
-import React, { FC } from "react";
+import React, { FC, useCallback, useState } from "react";
 import Button from '../components/Button';
 import { useScrollHandler } from "../hooks/useScrollHandler";
 import { motion } from "framer-motion"
 import * as prismicT from "@prismicio/types";
 import VariableContainer from "./VariableContainer";
+import Navbar from "./Navbar";
+import { useResizeDetector } from "react-resize-detector";
 
 interface HeaderProps {
     logoAction: string,
@@ -15,10 +17,27 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({logoAction, logoContent, logoTarget, navItem}) => {
     const scrolled = useScrollHandler();
-	let navPos = 'top-[0]'
-    
+
+
+	const [menuIsOpen, setMenuIsOpen] = useState(false)
+	const [isMobile, setIsMobile] = useState(false);
 
     let navClass = '';
+
+    	// // Triggered on resize - just update sizes of boxes
+	const onResize = useCallback(() => {
+		if (window === undefined) return
+		// setMenuOpen(false)
+		if(window){
+			setMenuIsOpen(false)
+			if(window.innerWidth < 1024){
+				setIsMobile(true)
+			}else{
+				setIsMobile(false)
+			}
+		}
+	}, []);
+	const { ref } = useResizeDetector({onResize});
 
 
     switch (scrolled) {
@@ -26,7 +45,7 @@ const Header: FC<HeaderProps> = ({logoAction, logoContent, logoTarget, navItem})
             navClass = ' text-custom-white'
             break;
         case "scrolled":
-            navClass = 'bg-custom-white text-custom-primary shadow-sm '
+            navClass = `bg-custom-white text-custom-primary shadow-sm  `
             break;
         default:
             navClass = 'text-custom-white'
@@ -36,7 +55,7 @@ const Header: FC<HeaderProps> = ({logoAction, logoContent, logoTarget, navItem})
     const variants = {
         'no-scroll': { 
             opacity: 1,
-            y: '10%' ,
+            y: menuIsOpen ? 0 : '10%' ,
 
         },
         'hero': {
@@ -55,34 +74,22 @@ const Header: FC<HeaderProps> = ({logoAction, logoContent, logoTarget, navItem})
         },
     }
 
+    const logo = {
+        target: logoTarget,
+        action: logoAction,
+        content: logoContent,
+    }
+
 
     return(
 
-    <div className={`flex flex-row items-center h-20  fixed top-0 left-0  z-20 w-full `}>
+    <div ref={ref} className={` flex flex-row items-center h-20  fixed top-0 left-0  z-20 w-full `}>
         <motion.header
         animate={scrolled}
         variants={variants}
         className={`w-full ${navClass}`}
         >
-            <div className={`px-10 z-0  py-5 overflow-hidden  container max-w-screen-xl m-auto   flex flex-row items-center   h-full ${navPos} transition-[top] duration-300 justify-between`}>
-                <div className="wrap">
-                <Button actionTarget={logoTarget}  classList={`text-inherit w-30  `} style={'default'}   type={logoAction !== null ? logoAction : 'link'} content={logoContent} />
-
-                </div>
-                <nav className="">
-                    <ul className="flex flex-row gap-9 items-center">
-
-                    {navItem.map((item, i)=>{
-                        return(
-                            <li key={i}>
-                                <Button actionTarget={item.target}    classList={`relative z-10 text-inherit `} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
-                            </li>
-                        )
-                    })}
-                    </ul>
-
-                </nav>
-            </div>
+            <Navbar navItem={navItem} logo={logo} menuIsOpen={menuIsOpen} scrolled={scrolled} setMenuIsOpen={setMenuIsOpen} isMobile={isMobile} />
         </motion.header>
     </div>
     )

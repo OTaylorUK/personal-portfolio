@@ -83,7 +83,9 @@ const TechStack = ({ slice, index }: SliceComponentProps<GeneralSlice>) => {
 
           <AnimationWrapper 
             settings={{delay:.6}}
-            innerClass={`flex-1 bg-custom-faded-light p-10 gap-10 grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center`}
+            innerClass={`flex-1 bg-custom-faded-light p-10 gap-10 grid grid-cols-2 items-center justify-items-center`}
+            variantType={'alt'}
+
           >
           {items.map((tech: any , i)=>{
             const {logo, name} = tech

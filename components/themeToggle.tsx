@@ -1,7 +1,4 @@
 
-import { useDarkMode } from '../hooks/useDarkMode'
-// import { useDarkMode } from '@/hooks/useDarkMode'
-import { useAnalyticsEvent } from '../hooks/useAnalytics'
 import React, { FC,useEffect, useState, useContext } from "react";
 
 import { useThemeContext } from '../context/theme';

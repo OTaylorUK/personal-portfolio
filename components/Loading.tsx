@@ -23,7 +23,7 @@ const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
 
   useEffect(() => {
     const animation = animate(progress, pathIndex, {
-      duration: 0.5,
+      duration: time,
       ease: "easeInOut",
       onComplete: () => {
         if (pathIndex === paths.length - 1) {
@@ -36,7 +36,7 @@ const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
     });
 
     return () => animation.stop();
-  }, [pathIndex, progress, setIsLoading]);
+  }, [pathIndex, progress, setIsLoading, time]);
 
 
   return (

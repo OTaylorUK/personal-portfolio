@@ -13,6 +13,7 @@ import ContactForm from "./ContactForm";
 
 interface FooterProps {
     copyright: string,
+    isFixed: boolean,
     text:  prismicT.RichTextField,
     title:  prismicT.RichTextField,
     altLinks:  prismicT.RichTextField,
@@ -21,15 +22,13 @@ interface FooterProps {
 }
 
 
-const Footer = React.forwardRef<HTMLDivElement, FooterProps>((props, ref) => {
+const Footer = React.forwardRef<HTMLDivElement, FooterProps>(({copyright, text, title, altLinks, alternativeContact, isFixed}, ref) => {
 
-    const {copyright, text, title, altLinks, alternativeContact} = props
     let updatedCopyright = findAndReplaceHolder({'year': new Date().getFullYear()}, copyright)
 
-    
     return(
 
-    <div ref={ref} className={`relative lg:fixed bottom-0 right-0 -z-50 w-full py-10 lg:py-20 min-h-[60vh] flex justify-center items-center text-left bg-gradient-to-br bg-gradient  from-custom-primary via-custom-secondary to-custom-tertiary animate-bg text-custom-white`}>
+    <div ref={ref} className={`relative  bottom-0 right-0 -z-50 w-full py-10 lg:py-20 min-h-[60vh] flex justify-center items-center text-left bg-gradient-to-br bg-gradient  from-custom-primary via-custom-secondary to-custom-tertiary animate-bg text-custom-white`} style={{position: `${isFixed ? 'fixed' : 'relative'}`}}>
         <Container>
             <div className={`flex flex-col lg:flex-row align-start  text-left gap-20 'lg:flex-row` }>
 
@@ -62,12 +61,16 @@ const Footer = React.forwardRef<HTMLDivElement, FooterProps>((props, ref) => {
                                     field={item.title}
                                     components={{
                                         heading3: ({ children }) =>  <h3 className='text-inherit'>{children}</h3>,
+
                                     }}
                                     key={i}
                                 />
                                 <PrismicRichText 
                                     field={item.content}
-                                    
+                                    components={{
+                                        paragraph: ({ children }) =>  <p className='text-custom-faded-light'>{children}</p>,
+
+                                    }}
                                 />
                                 </div>
                             )

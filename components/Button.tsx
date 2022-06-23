@@ -89,6 +89,9 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
     case 'text':
       variableClass = 'btn-text'
       break;
+    case 'icon':
+      variableClass = 'btn-icon'
+      break;
     case 'ghost':
       variableClass = 'btn-ghost'
       break;

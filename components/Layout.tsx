@@ -39,38 +39,24 @@ const Layout: FC<LayoutProps> = ({ children, seo, header,footer }) => {
 
   const [isLoading, setIsLoading] = useState(true)
 
-
-  // useEffect(()=>{
-
-  //   const timer1 = setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 1200);
-
-  //   return () => {
-  //     clearTimeout(timer1);
-  //   };
-
-
-  // },[])
-
-  
-
   const [footerHeight, setFooterHeight] = useState(0)
 
 	const onResize = useCallback(() => {
     if (window === undefined) return
 
-    console.log('resized');
-    
 		if(window){
-			if(window.innerWidth >= 1024){
+      let footerHeight = 0;
+      
+			if(window.innerWidth >= 1024 ){
         if(footerRef.current){
           const height = footerRef.current?.clientHeight  + 100 // account for err message height
-          setFooterHeight(height)
+          if(height <=  window.innerHeight){
+            footerHeight = height
+          }
         }
-			}else{
-        setFooterHeight(0)
-      }
+			}
+      setFooterHeight(footerHeight)
+
     }
 
 	}, []);
@@ -99,15 +85,13 @@ const Layout: FC<LayoutProps> = ({ children, seo, header,footer }) => {
 
       <Header {...header}/>
 
-
-   
-
       <div ref={ref}  className="z-20  inline-block  overflow-auto w-full  min-h-[100vh]" style={{marginBottom: `${footerHeight}px` }}>
-      {isLoading ? <Loading time={800} setIsLoading={setIsLoading} /> :  <PageContent>{children}</PageContent> }
+
+      {isLoading ? <Loading time={.45} setIsLoading={setIsLoading} /> :  <PageContent>{children}</PageContent> }
       
       </div>
 
-      <Footer ref={footerRef} {...footer} />
+      <Footer ref={footerRef} {...footer}  isFixed={footerHeight === 0 ? false : true} />
       
     </Fragment>
   )

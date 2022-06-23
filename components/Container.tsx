@@ -33,6 +33,18 @@ interface ContainerProps {
 
 
 
+const animations: Variants = {
+  offscreen: {
+    opacity: 0
+  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      staggerChildren: .45
+    }
+  }
+};
+
 
 const Container: FC<ContainerProps> = ({ children, settings }) => {
   
@@ -71,6 +83,7 @@ const Container: FC<ContainerProps> = ({ children, settings }) => {
     className={`min-h-[30vh] container  lg:px-12 flex flex-col ${outputVariableString(outerVars)}`}
     initial="offscreen"
     whileInView="onscreen"
+    variants={animations}
     viewport={{ once: true, amount: animation.inViewAmount }}
   >
     <div className={`content w-full flex flex-col items-start ${outputVariableString(innerVars)}`}>

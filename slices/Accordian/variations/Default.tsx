@@ -44,18 +44,14 @@ const Default = ({ slice,index  }: SliceComponentProps<AccordianSlice>) => {
 
       <Container>
         <div className={`min-h-[40vh] flex flex-col  text-left gap-20 lg:flex-row ` }>
-          <div className={`flex-1 flex flex-col  justify-center gap-6 text-custom-faded items-start}`}>
-            <AnimationWrapper 
-              settings={{delay:.2}}
-             >
+
+          <AnimationWrapper
+            innerClass={`flex-1 flex flex-col justify-center  gap-2 text-custom-faded items-start`}
+            variantType={'alt'}
+          >
               <PrismicRichText 
                   field={title}
               />
-            </AnimationWrapper>
-
-            <AnimationWrapper 
-              settings={{delay:.4}}
-             >
               <PrismicRichText 
                 field={text}
                 components={{
@@ -69,11 +65,10 @@ const Default = ({ slice,index  }: SliceComponentProps<AccordianSlice>) => {
                     </li>,
                 }}
               />  
-            </AnimationWrapper>
-          </div>
+
+          </AnimationWrapper>
 
           <AnimationWrapper 
-            settings={{delay:.6}}
             innerClass={`flex-1 flex flex-col align-start    `}
             variantType={'alt'}
 

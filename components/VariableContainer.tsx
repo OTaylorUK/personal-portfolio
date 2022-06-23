@@ -1,9 +1,5 @@
 
-import Head from "next/head";
-import React, { FC, Fragment, ReactNode } from "react";
-import { outputVariableString } from "../utils/helpers";
-import ColourPalette from "./ColourPalette";
-import Header from "./Header";
+import React, { FC, ReactNode } from "react";
 import { motion, Variants } from "framer-motion";
 
 
@@ -19,6 +15,17 @@ interface ContainerProps {
 
 
 
+const animations: Variants = {
+  offscreen: {
+    opacity: 0
+  },
+  onscreen: {
+    opacity: 1,
+    transition: {
+      staggerChildren: .45
+    }
+  }
+};
 
 const VariableContainer: FC<ContainerProps> = ({ children, settings, containerClass = '' }) => {
   
@@ -36,6 +43,8 @@ const VariableContainer: FC<ContainerProps> = ({ children, settings, containerCl
     className={`${containerClass}`}
     initial="offscreen"
     whileInView="onscreen"
+    variants={animations}
+
     viewport={{ once: true, amount: animation.inViewAmount }}
   >
             {children}

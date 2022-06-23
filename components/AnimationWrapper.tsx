@@ -5,12 +5,14 @@ import { PrismicRichText } from '@prismicio/react'
 import * as prismicT from "@prismicio/types";
 import { motion, Variants } from "framer-motion";
 
+type types = "alt" | "default" 
+
 
 interface AnimationWrapperProps {
     children: JSX.Element | JSX.Element[] ,
     innerClass?: string| null | undefined
     type?: string| null | undefined
-    variantType?: string| null | undefined
+    variantType?: types
     settings?: {
       bounce?: number,
       delay?: number,
@@ -19,7 +21,7 @@ interface AnimationWrapperProps {
 }
 
 
-const AnimationWrapper = ({ type = 'default', variantType = 'default', innerClass = 'flex flex-col gap-4' , children, settings}:AnimationWrapperProps): JSX.Element => {
+const AnimationWrapper = ({ type = 'default', variantType = 'default', innerClass = 'flex flex-col gap-2' , children, settings}:AnimationWrapperProps): JSX.Element => {
 
   const { 
     bounce = 0.2,
@@ -52,10 +54,10 @@ const altAnimation: Variants = {
   },
   onscreen: {
     opacity: 1,
-    transition: {
-      duration: duration,
-      delay: delay
-    }
+    // transition: {
+    //   duration: duration,
+    //   delay: delay
+    // }
   }
 };
 

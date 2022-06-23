@@ -39,18 +39,18 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
 
       <div className={`flex flex-col-reverse gap-8  lg:gap-20 relative justify-center  ${isOdd ? 'lg:flex-row' : 'lg:flex-row-reverse'}`} >
 
-        <div className={`flex-1 flex flex-col items-start text-left gap-6 text-custom-faded   lg:static z-10 h-full lg:h-auto  justify-center lg:p-0 `}>
-            <AnimationWrapper
-              settings={{delay:.2}}
-            >
+
+      <AnimationWrapper
+          innerClass={`flex-1 flex flex-col items-start text-left gap-6 text-custom-faded   lg:static z-10 h-full lg:h-auto  justify-center lg:p-0`}
+
+          variantType={'alt'}
+        >
+           
               <PrismicRichText 
                 field={name}
               /> 
-            </AnimationWrapper>
 
-            <AnimationWrapper 
-            settings={{delay:.4}}
-            >
+           
               <PrismicRichText 
                   field={summary}
               /> 
@@ -60,16 +60,13 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
                     list: ({ children }) =>  <ul className='flex flex-row row-wrap gap-4'>{children}</ul>,
                   }}
               /> 
-            </AnimationWrapper>
-        </div>
-
+        </AnimationWrapper>
         <AnimationWrapper 
-          settings={{delay:.4}}
           innerClass={`flex-1`}
           variantType={'alt'}
         >
           <Image
-          className={`rounded-lg overflow-hidden`}
+          className={`rounded-xl lg:rounded-md overflow-hidden`}
               src={image?.url}
               alt={image?.alt}
               width={image?.dimensions?.width}

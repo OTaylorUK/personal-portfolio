@@ -50,7 +50,7 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
             ><h1 className='text-custom-white'>{children}</h1></AnimationWrapper>,
               paragraph: ({ children }) => <AnimationWrapper 
               settings={{delay:.4}}
-             ><p className=' text-lg lg:text-xl text-custom-faded-light w-full lg:w-7/12'>{children}</p></AnimationWrapper>,
+             ><p className='large-text text-custom-faded-light w-full lg:w-7/12'>{children}</p></AnimationWrapper>,
             }}
           />  
         
@@ -67,7 +67,7 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
           <>
           {items.map((channel: any , i)=>{
             return  (
-              <Button key={`channel-${i}`}  style={'default'} link={channel.socialLink}  type= 'link' content={channel.socialContent} />
+              <Button key={`channel-${i}`}  style={'icon'} link={channel.socialLink}  type= 'link' content={channel.socialContent} />
             ) 
           })}
           </>

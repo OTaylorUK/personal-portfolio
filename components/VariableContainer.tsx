@@ -32,7 +32,7 @@ const VariableContainer: FC<ContainerProps> = ({ children, settings, containerCl
 
     const { 
       animation = { 
-        inViewAmount: 0.8,
+        inViewAmount: 0.2,
       }
     } = {...settings}
     

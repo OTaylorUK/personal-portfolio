@@ -61,23 +61,18 @@ const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
         }
       }}
     >
-      <div className={`flex-1 flex flex-col items-center justify-center  gap-6 text-custom-faded px-6 lg:w-8/12 m-auto`}>
+      
       <AnimationWrapper 
-        settings={{delay:.2}}
+        variantType={'alt'}
+        innerClass={`flex-1 flex flex-col items-center justify-center  gap-6 text-custom-faded px-6 lg:w-8/12 m-auto`}
       >
         <PrismicRichText 
             field={title}
         />
-      </AnimationWrapper>
-
-      <AnimationWrapper 
-        settings={{delay:.4}}
-        >
         <PrismicRichText 
           field={text}
         /> 
       </AnimationWrapper>
-      </div>
 
       <div className="flex flex-col gap-8 lg:gap-24 ">
           {items.map((project , i)=>

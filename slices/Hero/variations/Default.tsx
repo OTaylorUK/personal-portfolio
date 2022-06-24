@@ -37,11 +37,11 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
     <section 
       id={uid ? uid : slice_type}
       data-type={slice_type}
-      className={`w-full min-h-[100vh] flex justify-center items-center text-left bg-gradient-to-br bg-gradient  from-custom-primary via-custom-secondary to-custom-tertiary animate-bg`}
+      className={`w-full pt-20 lg:pt-0 min-h-[100vh] flex justify-center items-center text-left bg-gradient-to-br bg-gradient  from-custom-primary via-custom-secondary to-custom-tertiary animate-bg`}
     >
      <Container>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 items-start">
           <PrismicRichText 
             field={content}
             components={{
@@ -50,11 +50,11 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
             ><h1 className='text-custom-white'>{children}</h1></AnimationWrapper>,
               paragraph: ({ children }) => <AnimationWrapper 
               settings={{delay:.4}}
-             ><p className='large-text text-custom-faded-light w-full lg:w-7/12'>{children}</p></AnimationWrapper>,
+            ><p className='large-text text-custom-faded-light w-full lg:w-7/12'>{children}</p></AnimationWrapper>,
             }}
           />  
-        
-          </div>
+        <Button  actionTarget={buttonAction} style={'ghost'}   type= 'button' content={buttonContent} />
+      </div>
      </Container>
 
 

@@ -1,5 +1,5 @@
 :root {
-	@apply light;
+	@apply dark;
 }
 
 
@@ -218,6 +218,10 @@ a {
 
 	a{
 		@apply text-base  font-light  font-inter text-custom-faded-dark ;
+	}
+
+	a strong{
+		@apply   font-light   text-custom-accent-primary ;
 	}
 
 	p strong{

@@ -35,7 +35,7 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
   
   return (
 
-    <VariableContainer containerClass='flex flex-col lg:flex-row  gap-4  justify-center overflow-hidden'>
+    <VariableContainer containerClass='flex flex-col lg:flex-row  gap-4  justify-center overflow-hidden group'>
 
       <div className={`flex flex-col-reverse gap-8  lg:gap-20 relative justify-center  ${isOdd ? 'lg:flex-row' : 'lg:flex-row-reverse'}`} >
 
@@ -66,7 +66,7 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
           variantType={'alt'}
         >
           <Image
-          className={`rounded-xl lg:rounded-md overflow-hidden`}
+          className={`rounded-xl lg:rounded-md overflow-hidden transition-transform duration-500 opacity-90 group-hover:opacity-100 group-hover:scale-105`}
               src={image?.url}
               alt={image?.alt}
               width={image?.dimensions?.width}

@@ -39,8 +39,10 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
       data-type={slice_type}
       className={`w-full pt-20 lg:pt-0 min-h-[100vh] flex justify-center items-center text-left bg-gradient-to-br bg-gradient  from-custom-primary via-custom-secondary to-custom-tertiary animate-bg`}
     >
-     <Container>
 
+     <Container >
+
+    
       <div className="flex flex-col gap-8 items-start">
           <PrismicRichText 
             field={content}

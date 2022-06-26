@@ -22,14 +22,12 @@ const animations: Variants = {
   onscreen: {
     opacity: 1,
     transition: {
-      staggerChildren: .45
+      staggerChildren: .35
     }
   }
 };
 
 const VariableContainer: FC<ContainerProps> = ({ children, settings, containerClass = '' }) => {
-  
-
     const { 
       animation = { 
         inViewAmount: 0.2,

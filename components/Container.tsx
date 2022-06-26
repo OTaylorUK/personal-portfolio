@@ -23,6 +23,7 @@ interface ContainerProps {
         bg?: string
       }
       animation?:{
+        initialState?: "onscreen" | "offscreen",
         inViewAmount?: number,
         bounce?: number,
         delay?: number,
@@ -40,7 +41,7 @@ const animations: Variants = {
   onscreen: {
     opacity: 1,
     transition: {
-      staggerChildren: .45
+      staggerChildren: .35
     }
   }
 };
@@ -60,6 +61,7 @@ const Container: FC<ContainerProps> = ({ children, settings }) => {
       },
       animation = { 
         inViewAmount: 0.2,
+        initialState: "offscreen",
       }
     } = {...settings}
 
@@ -81,7 +83,7 @@ const Container: FC<ContainerProps> = ({ children, settings }) => {
 
   <motion.div
     className={`min-h-[30vh] container  lg:px-12 flex flex-col ${outputVariableString(outerVars)}`}
-    initial="offscreen"
+    initial={animation.initialState}
     whileInView="onscreen"
     variants={animations}
     viewport={{ once: true, amount: animation.inViewAmount }}

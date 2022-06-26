@@ -117,15 +117,15 @@ a {
 
 
 	.hover-class{
-		@apply  -z-10 absolute bottom-[10%] left-0 h-[50%] w-full bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary opacity-10 transition-transform  duration-300 -translate-x-[95%];
+		@apply  -z-10 opacity-20 absolute bottom-[10%] left-0 h-[50%] w-full bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  transition-transform  duration-300  scale-x-[10%] origin-left;
 	}
 
 	.hover-class-active{
-		@apply  transition-transform duration-500 translate-x-0 opacity-90 ;
+		@apply  transition-transform duration-500 scale-x-100 opacity-90 ;
 	}
 
 	.link-inside-text{
-		@apply  relative  text-inherit whitespace-nowrap overflow-x-clip;
+		@apply  relative  text-inherit whitespace-nowrap overflow-x-hidden;
 		font-family: inherit;
 		font-size: inherit;
 		font-weight: inherit;

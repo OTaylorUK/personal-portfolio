@@ -46,8 +46,8 @@ const NavMenu = ({ isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Element =>
                 variableClass = ''
               }
                 return(
-                  <motion.li key={i} variants={listItem} >
-                        <Button actionTarget={item.target}    classList={`relative z-10 ${variableClass}`} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
+                  <motion.li key={i} className="w-full" variants={listItem} >
+                        <Button actionTarget={item.target}    classList={`relative justify-start z-10 ${variableClass}`} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
                   </motion.li>
                 )
             })}

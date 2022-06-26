@@ -52,7 +52,7 @@ const Navbar = ({ scrolled, navItem, logo,  isMobile, menuIsOpen, setMenuIsOpen}
     <>
       <motion.nav
       
-        className="px-10 z-0  py-5 overflow-hidden  container max-w-screen-xl m-auto   flex flex-row items-center   h-full top-[0] transition-[top] duration-300 justify-between"
+        className=" z-0  px-6 lg:px-10 py-5 overflow-hidden  container max-w-screen-xl m-auto   flex flex-row items-center   h-full top-[0] transition-[top] duration-300 justify-between"
         initial="offscreen"
         whileInView="onscreen"
         animate={isMobile ?  "offscreen" :  "onscreen"}

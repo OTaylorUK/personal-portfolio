@@ -70,6 +70,18 @@ const Layout: FC<LayoutProps> = ({ children, seo, header,footer }) => {
       <Head>
         <title>{seo.title}</title>
         <meta charSet="utf-8" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content={`@VirtualJungleUK`} />
+        <meta name="twitter:creator" content={`@VirtualJungleUK`} />
+        <meta property="og:url" content={'https://www.ollie-taylor.uk/'} />
+        <meta name="og:title" content={seo?.title} />
+        <meta name="og:description" content={seo?.description} />
+        <meta property="og:image" content={seo?.ogImage?.url} />
+        <meta property="og:type" content="article" />
+        <meta name="description" content={seo?.description} />
+
+        
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>

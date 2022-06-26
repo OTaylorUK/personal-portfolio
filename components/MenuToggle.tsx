@@ -26,8 +26,6 @@ interface SectionHeaderProps {
 
 const MenuToggle = ({ menuOpen, toggle, scrolled}:SectionHeaderProps): JSX.Element => {
 
-  console.log({menuOpen});
-
   let curColour = `${menuOpen ? 'text-custom-white' : 'text-custom-white' }`
   if(scrolled == 'scrolled'){
     curColour  = `${menuOpen ? 'text-custom-white' : 'text-custom-primary' }`
@@ -36,7 +34,7 @@ const MenuToggle = ({ menuOpen, toggle, scrolled}:SectionHeaderProps): JSX.Eleme
   return(
     <motion.button 
     animate={menuOpen ? "open" : "closed"}
-    className={`${curColour} z-2 block lg:hidden`} 
+    className={`${curColour} z-2 block p-2 lg:hidden`} 
     onClick={toggle}
   >
 

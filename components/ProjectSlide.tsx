@@ -40,7 +40,7 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
       <div className={`flex flex-col-reverse gap-8  lg:gap-20 relative justify-center  ${isOdd ? 'lg:flex-row' : 'lg:flex-row-reverse'}`} >
 
 
-      <AnimationWrapper
+        <AnimationWrapper
           innerClass={`flex-1 flex flex-col items-start text-left gap-6 text-custom-faded   lg:static z-10 h-full lg:h-auto  justify-center lg:p-0`}
 
           variantType={'alt'}
@@ -57,7 +57,7 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
               <PrismicRichText 
                   field={tools}
                   components={{
-                    list: ({ children }) =>  <ul className='flex flex-row row-wrap gap-4'>{children}</ul>,
+                    list: ({ children }) =>  <ul className='flex flex-row row-wrap gap-4 text-custom-faded-dark opacity-90 text-sm'>{children}</ul>,
                   }}
               /> 
         </AnimationWrapper>

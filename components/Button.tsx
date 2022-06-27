@@ -60,7 +60,7 @@ const formatButtonContent = (content: prismicT.RichTextField | null ) : JSX.Elem
   )
 }
 
-  const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', classList ='', type='button', style = 'primary', link = null, text ='', icon = {}, eventHandler, textFirst = true, content, actionTarget}) => {
+const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', classList ='', type='button', style = 'primary', link = null, text ='', icon = {}, eventHandler, textFirst = true, content, actionTarget}) => {
 
 
   let isCurrentPage = false;
@@ -123,6 +123,8 @@ const formatButtonContent = (content: prismicT.RichTextField | null ) : JSX.Elem
         }
         break;
       case 'download':
+        console.log(file);
+        
         return(
           <a key={`btn`} href={file?.url} target="_blank" className={buttonClass} rel="noreferrer">
           {formatButtonContent(content)}

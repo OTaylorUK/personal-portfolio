@@ -69,6 +69,9 @@ const ContactForm = (): JSX.Element => {
                             },
                             withCredentials: false
                         }).then((response) => {
+
+                            console.log(response.data);
+                            
                             if (response.data.success) {
 
                                 const sendValues = {...values, date: new Date()}

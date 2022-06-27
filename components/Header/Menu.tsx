@@ -57,7 +57,7 @@ const Menu = ({ scrolled, isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Ele
         }
           return(
             <motion.li key={i} variants={listItem} >
-                  <Button actionTarget={item.target}    classList={`relative z-10 ${variableClass}`} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
+                  <Button actionTarget={item.target} file={item?.file}   classList={`relative z-10 ${variableClass}`} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
             </motion.li>
           )
       })}

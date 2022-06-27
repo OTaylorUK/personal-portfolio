@@ -1,13 +1,8 @@
 
-import React, { FC,useEffect, useState, useContext } from "react";
+import React, { FC,useEffect, useState } from "react";
+import { useThemeContext } from '../../store/theme';
+import { ThemeToggleProps } from "../../types/Helpers";
 
-import { useThemeContext } from '../context/theme';
-
-
-
-interface ThemeToggleProps {
-	className?: string
-}
 
 const ThemeToggle: FC<ThemeToggleProps> = ({className}) => {
 

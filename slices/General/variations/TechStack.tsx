@@ -1,58 +1,22 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
-import * as prismicT from "@prismicio/types";
 import {
 	SliceComponentProps,
 } from "@prismicio/react";
 
 import Image from "next/image";
-import Container from '../../../components/Container';
-import SectionHeader from '../../../components/SectionHeader';
-import { motion, Variants } from "framer-motion";
-import SectionText from '../../../components/SectionText';
-import AnimationWrapper from '../../../components/AnimationWrapper';
+import Container from '../../../components/Layout/Container';
+import AnimationWrapper from '../../../components/Helpers/AnimationWrapper';
+import { GeneralTechStack } from '../../../types/GeneralSlice';
+import { numIsOdd } from '../../../utils/helpers';
 
 
-type GeneralSlice = prismicT.Slice<
-	"general",
-	{
-		title: prismicT.RichTextField,
-    text: prismicT.RichTextField,
-		uid: prismicT.KeyTextField
-	}
->;
-
-
-
-
-const cardVariants: Variants = {
-  offscreen: {
-    y: '100%'
-  },
-  onscreen: {
-    y: 0,
-    // rotate: -10,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8
-    }
-  }
-};
-
-const TechStack = ({ slice, index }: SliceComponentProps<GeneralSlice>) => {
+const TechStack = ({ slice, index }: SliceComponentProps<GeneralTechStack>) => {
 
   const {primary,items, slice_type} = {...slice}
   const {title,text, uid} = primary;
 
-  let isOdd = true;
-
-  if(index % 2 === 0){
-    isOdd = false;
-  }
-
-
-
+  const isOdd = numIsOdd(index)
 
   return(
     <section 

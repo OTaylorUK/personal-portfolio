@@ -1,53 +1,97 @@
 {
-  "id": "db444918-e0bd-4377-ac90-1c144ac1ef16",
-  "uid": "ratione-sit-non",
+  "id": "47a8977e-a65d-4c25-8ede-7b9e4c823b57",
+  "uid": "natus-itaque-accusamus",
   "type": "header",
   "data": {
-    "logoAction": "syndicate back-end action-items",
+    "logoAction": "morph cross-platform e-business",
     "logoContent": [
       {
         "type": "paragraph",
-        "text": "Culpa aliqua esse commodo.",
+        "text": "Dolore nostrud cupidatat duis qui sunt eu laboris labore irure culpa fugiat veniam officia fugiat. Nostrud Lorem ullamco anim sint reprehenderit aliquip ad aliquip sint duis ullamco nostrud minim aliqua. Voluptate aute et reprehenderit do dolore.",
         "spans": []
       }
     ],
-    "logoTarget": "morph leading-edge blockchains",
+    "logoTarget": "grow plug-and-play metrics",
     "navItem": [
       {
-        "style": "brand plug-and-play e-commerce",
-        "action": "enable innovative mindshare",
+        "style": "unleash efficient initiatives",
+        "action": "embrace ubiquitous web services",
         "content": [
           {
             "type": "paragraph",
-            "text": "Anim velit ullamco culpa excepteur sint eu et ut officia adipisicing esse excepteur do. Aliquip dolor laboris quis in esse est ex adipisicing et.",
+            "text": "Et Lorem magna labore. Consectetur ea quis labore quis cillum in velit pariatur fugiat qui exercitation elit.",
             "spans": []
           }
         ],
-        "target": "whiteboard enterprise e-services"
+        "target": "innovate cutting-edge architectures",
+        "file": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
       },
       {
-        "style": "cultivate best-of-breed interfaces",
-        "action": "iterate turn-key markets",
+        "style": "transform vertical infrastructures",
+        "action": "e-enable visionary content",
         "content": [
           {
             "type": "paragraph",
-            "text": "Ea cupidatat magna aute eu aliqua id dolore consequat.",
+            "text": "Id ea laboris reprehenderit dolor sint amet incididunt.",
             "spans": []
           }
         ],
-        "target": "deliver open-source applications"
+        "target": "optimize compelling infomediaries",
+        "file": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
       },
       {
-        "style": "cultivate real-time applications",
-        "action": "matrix world-class convergence",
+        "style": "transition collaborative niches",
+        "action": "target cross-media experiences",
         "content": [
           {
             "type": "paragraph",
-            "text": "Pariatur eu ullamco do laborum sunt minim mollit eiusmod exercitation non minim veniam. Cupidatat adipisicing culpa elit minim velit aliqua deserunt anim nisi sit exercitation sunt in ea.",
+            "text": "Nostrud est sint deserunt id amet cupidatat aliqua incididunt enim esse in. Aliquip Lorem voluptate quis cupidatat aliqua fugiat aliquip labore sunt irure et consequat.",
             "spans": []
           }
         ],
-        "target": "synergize innovative convergence"
+        "target": "reinvent bleeding-edge experiences",
+        "file": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "style": "embrace global relationships",
+        "action": "syndicate clicks-and-mortar partnerships",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Id mollit esse do ullamco officia.",
+            "spans": []
+          }
+        ],
+        "target": "e-enable vertical solutions",
+        "file": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "style": "incentivize out-of-the-box experiences",
+        "action": "seize next-generation e-commerce",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Aliquip reprehenderit cupidatat cupidatat laborum est cupidatat aliqua deserunt mollit ad laboris eiusmod ex fugiat. Sint enim esse ipsum in excepteur voluptate mollit veniam. Dolore ullamco consequat tempor occaecat excepteur amet mollit.",
+            "spans": []
+          }
+        ],
+        "target": "generate killer solutions",
+        "file": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
       }
     ]
   }

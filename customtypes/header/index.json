@@ -39,6 +39,14 @@
                 "label": "Target",
                 "placeholder": ""
               }
+            },
+            "file": {
+              "type": "Link",
+              "config": {
+                "label": "File",
+                "placeholder": "",
+                "select": "media"
+              }
             }
           }
         }

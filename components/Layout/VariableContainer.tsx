@@ -1,19 +1,7 @@
 
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import { motion, Variants } from "framer-motion";
-
-
-interface ContainerProps {
-  children?: ReactNode,
-  containerClass?: string
-  settings?: {
-      animation?:{
-        inViewAmount?: number,
-      }
-  }
-}
-
-
+import { ContainerProps } from "../../types/Layout";
 
 const animations: Variants = {
   offscreen: {
@@ -31,21 +19,20 @@ const VariableContainer: FC<ContainerProps> = ({ children, settings, containerCl
     const { 
       animation = { 
         inViewAmount: 0.2,
+        initialState: "offscreen",
       }
     } = {...settings}
-    
-    
+
   return (
 
     <motion.div
-    className={`${containerClass}`}
-    initial="offscreen"
-    whileInView="onscreen"
-    variants={animations}
-
-    viewport={{ once: true, amount: animation.inViewAmount }}
-  >
-            {children}
+      className={`${containerClass}`}
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={animations}
+      viewport={{ once: true, amount: animation.inViewAmount }}
+    >
+      {children}
   </motion.div>
   );
 };

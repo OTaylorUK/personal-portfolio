@@ -315,6 +315,11 @@ a {
 		@apply py-4 px-6 border rounded border-custom-accent-primary text-custom-accent-primary transition-colors duration-300 hover:text-custom-white  hover:bg-[#fb4eff1a] hover:bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  animate-text  ;
 	}
 
+	.btn-ghost-filled{
+		@apply py-4 px-6 border rounded border-custom-accent-primary hover:text-custom-primary   transition-colors duration-300 text-custom-white  bg-[#fb4eff1a] bg-gradient-to-br  from-custom-accent-primary to-custom-accent-secondary  animate-text  ;
+	}
+
+
 	/* ghost */
 	.btn-ghost-small{
 		@apply btn-ghost py-3;

@@ -4,35 +4,19 @@ import * as prismicT from "@prismicio/types";
 import {
 	SliceComponentProps,
 } from "@prismicio/react";
-import Container from '../../../components/Container';
+import Container from '../../../components/Layout/Container';
 import Button from '../../../components/Button';
-import AnimationWrapper from '../../../components/AnimationWrapper';
-import VariableContainer from '../../../components/VariableContainer';
-
-type HeroSlice = prismicT.Slice<
-	"hero",
-	{
-		content: prismicT.RichTextField;
-		uid: prismicT.KeyTextField;
-		buttonStyle: prismicT.KeyTextField;
-		buttonAction: string;
-		buttonContent: prismicT.RichTextField;
-	}
->;
-
-type Social = {
-  socialContent: Record<string, prismicT.AnyRegularField>,
-  socialLink: Record<string, prismicT.AnyRegularField>,
-  index: number, 
-  array: Record<string, prismicT.AnyRegularField>[],
-} 
-
+import AnimationWrapper from '../../../components/Helpers/AnimationWrapper';
+import VariableContainer from '../../../components/Layout/VariableContainer';
+import { HeroSlice } from '../../../types/HeroSlice';
 
 const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
 
   const {primary,items, slice_type} = {...slice}
-  const {content, uid, buttonStyle, buttonAction, buttonContent} = primary;
+  const {content, uid, buttonStyle,buttonTarget, buttonAction, buttonContent} = primary;
 
+  console.log({buttonTarget});
+  
   return(
     <section 
       id={uid ? uid : slice_type}
@@ -55,7 +39,7 @@ const Default = ({ slice }: SliceComponentProps<HeroSlice>) => {
             ><p className='large-text text-custom-faded-light w-full lg:w-7/12'>{children}</p></AnimationWrapper>,
             }}
           />  
-        <Button  actionTarget={buttonAction} style={'ghost'}   type= 'button' content={buttonContent} />
+        <Button  actionTarget={buttonTarget} style={'ghost'}  type={buttonAction}   content={buttonContent} />
       </div>
      </Container>
 

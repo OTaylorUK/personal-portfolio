@@ -1,30 +1,19 @@
 
 import React, { FC, useCallback, useState } from "react";
-import Button from '../components/Button';
-import { useScrollHandler } from "../hooks/useScrollHandler";
+import { useScrollHandler } from "../../hooks/useScrollHandler";
 import { motion } from "framer-motion"
-import * as prismicT from "@prismicio/types";
-import VariableContainer from "./VariableContainer";
 import Navbar from "./Navbar";
 import { useResizeDetector } from "react-resize-detector";
+import { HeaderProps } from "../../types/Header";
 
-interface HeaderProps {
-    logoAction: string,
-    logoContent:  prismicT.RichTextField,
-    logoTarget: string,
-    navItem: any[]
-}
 
 const Header: FC<HeaderProps> = ({logoAction, logoContent, logoTarget, navItem}) => {
     const scrolled = useScrollHandler();
-
-
 	const [menuIsOpen, setMenuIsOpen] = useState(false)
 	const [isMobile, setIsMobile] = useState(false);
 
     let navClass = '';
 
-    	// // Triggered on resize - just update sizes of boxes
 	const onResize = useCallback(() => {
 		if (window === undefined) return
 		// setMenuOpen(false)
@@ -80,18 +69,16 @@ const Header: FC<HeaderProps> = ({logoAction, logoContent, logoTarget, navItem})
         content: logoContent,
     }
 
-
     return(
-
-    <div ref={ref} className={` flex flex-row items-center h-20  fixed top-0 left-0  z-20 w-full `}>
-        <motion.header
-        animate={scrolled}
-        variants={variants}
-        className={`w-full ${navClass}`}
-        >
-            <Navbar navItem={navItem} logo={logo} menuIsOpen={menuIsOpen} scrolled={scrolled} setMenuIsOpen={setMenuIsOpen} isMobile={isMobile} />
-        </motion.header>
-    </div>
+        <div ref={ref} className={` flex flex-row items-center h-20  fixed top-0 left-0  z-20 w-full `}>
+            <motion.header
+            animate={scrolled}
+            variants={variants}
+            className={`w-full ${navClass}`}
+            >
+                <Navbar navItem={navItem} logo={logo} menuIsOpen={menuIsOpen} scrolled={scrolled} setMenuIsOpen={setMenuIsOpen} isMobile={isMobile} />
+            </motion.header>
+        </div>
     )
 }
 

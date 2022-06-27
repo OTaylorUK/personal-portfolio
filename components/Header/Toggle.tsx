@@ -1,9 +1,6 @@
 import * as React from "react";
-import { PrismicRichText } from '@prismicio/react'
-import * as prismicT from "@prismicio/types";
-import { motion, SVGMotionProps, Variants } from "framer-motion";
-
-
+import { motion, SVGMotionProps } from "framer-motion";
+import { ToggleProps } from "../../types/Header";
 
 const Path = (props: JSX.IntrinsicAttributes & SVGMotionProps<SVGPathElement> & React.RefAttributes<SVGPathElement>) => (
   <motion.path
@@ -15,26 +12,12 @@ const Path = (props: JSX.IntrinsicAttributes & SVGMotionProps<SVGPathElement> & 
   />
 );
 
+const Toggle = ({ menuOpen, toggle}:ToggleProps): JSX.Element => {
 
-interface SectionHeaderProps {
-  menuOpen: boolean
-  toggle: any
-  scrolled: string
-}
-
-
-
-const MenuToggle = ({ menuOpen, toggle, scrolled}:SectionHeaderProps): JSX.Element => {
-
-  let curColour = `${menuOpen ? 'text-custom-white' : 'text-custom-white' }`
-  if(scrolled == 'scrolled'){
-    curColour  = `${menuOpen ? 'text-custom-white' : 'text-custom-primary' }`
-  }
-  
   return(
     <motion.button 
     animate={menuOpen ? "open" : "closed"}
-    className={`${curColour} z-2 block p-2 lg:hidden`} 
+    className={`  text-inherit z-2 block p-2 lg:hidden`} 
     onClick={toggle}
   >
 
@@ -67,4 +50,4 @@ const MenuToggle = ({ menuOpen, toggle, scrolled}:SectionHeaderProps): JSX.Eleme
 
 
 
-export default MenuToggle;
+export default Toggle;

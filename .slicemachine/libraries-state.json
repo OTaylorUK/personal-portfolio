@@ -571,6 +571,13 @@
                     "label": "Button Style",
                     "placeholder": ""
                   }
+                },
+                "buttonTarget": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Button Target",
+                    "placeholder": ""
+                  }
                 }
               },
               "items": {
@@ -626,7 +633,7 @@
                 "socialContent": [
                   {
                     "type": "paragraph",
-                    "text": "Ex incididunt id magna Lorem.",
+                    "text": "Nisi sint consequat nulla elit nisi deserunt non non irure. Dolor duis ex nostrud fugiat.",
                     "spans": []
                   }
                 ],
@@ -639,7 +646,7 @@
                 "socialContent": [
                   {
                     "type": "paragraph",
-                    "text": "Commodo Lorem aliqua adipisicing sint consectetur aliqua exercitation incididunt ad commodo. Elit cillum exercitation non minim. Elit quis consectetur nostrud.",
+                    "text": "Magna cupidatat amet dolor proident occaecat reprehenderit. Nostrud incididunt sunt labore dolor. Aliquip velit amet officia adipisicing ad elit.",
                     "spans": []
                   }
                 ],
@@ -652,7 +659,20 @@
                 "socialContent": [
                   {
                     "type": "paragraph",
-                    "text": "Cillum laboris laboris in aliqua velit mollit excepteur consectetur ex sit ad. Velit qui nisi pariatur ad enim.",
+                    "text": "Aliquip minim qui aute esse amet Lorem magna anim ex quis veniam amet laborum ullamco. Dolore excepteur enim commodo incididunt velit aliquip esse Lorem esse ea ullamco id.",
+                    "spans": []
+                  }
+                ],
+                "socialLink": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
+              },
+              {
+                "socialContent": [
+                  {
+                    "type": "paragraph",
+                    "text": "Sunt ut tempor culpa tempor dolore minim irure enim minim qui sunt eu. Tempor sunt proident ea ea in. Quis in reprehenderit deserunt sint in amet labore.",
                     "spans": []
                   }
                 ],
@@ -660,26 +680,40 @@
                   "link_type": "Web",
                   "url": "https://prismic.io"
                 }
+              },
+              {
+                "socialContent": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ea ut id adipisicing.",
+                    "spans": []
+                  }
+                ],
+                "socialLink": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                }
               }
             ],
             "primary": {
               "content": [
                 {
                   "type": "paragraph",
-                  "text": "Amet ad duis cupidatat ea sunt magna veniam excepteur eiusmod. Officia consectetur incididunt sunt amet pariatur duis.",
+                  "text": "Duis esse dolor deserunt Lorem proident aute officia Lorem ea aute velit ea dolor. Ut Lorem nisi nisi ipsum esse duis reprehenderit fugiat eiusmod. Est excepteur excepteur ad ipsum.",
                   "spans": []
                 }
               ],
-              "uid": "extend user-centric portals",
+              "uid": "mesh cross-platform initiatives",
               "buttonContent": [
                 {
                   "type": "paragraph",
-                  "text": "Amet excepteur irure incididunt.",
+                  "text": "Proident et ut dolore cillum qui incididunt ea mollit labore sit sunt aute. Incididunt ipsum commodo sit do qui. Commodo cillum fugiat nostrud id amet ipsum.",
                   "spans": []
                 }
               ],
-              "buttonAction": "evolve magnetic web services",
-              "buttonStyle": "morph transparent relationships"
+              "buttonAction": "harness user-centric e-services",
+              "buttonStyle": "integrate out-of-the-box metrics",
+              "buttonTarget": "visualize intuitive blockchains"
             }
           },
           "test": {
@@ -691,7 +725,7 @@
               "content": [
                 {
                   "type": "paragraph",
-                  "text": "Qui aliqua excepteur qui. Laboris dolor eiusmod irure nulla enim tempor aute dolor in nulla ut pariatur. Excepteur tempor minim exercitation irure ut officia voluptate.",
+                  "text": "Consequat laboris sint nulla est ad. Ex non amet reprehenderit laborum excepteur aute cupidatat deserunt ea.",
                   "spans": []
                 }
               ]
@@ -745,6 +779,24 @@
                     "placeholder": "",
                     "allowTargetBlank": true,
                     "single": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "buttonGithub": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Button Github",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "buttonWebsite": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Button Website",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                   }
                 }
               },
@@ -815,27 +867,27 @@
                 "name": [
                   {
                     "type": "paragraph",
-                    "text": "Ipsum nisi nisi pariatur reprehenderit nostrud culpa nisi laborum eu id qui voluptate reprehenderit voluptate. Esse aliquip ea ad cillum minim laboris laboris ipsum sunt esse exercitation anim commodo cupidatat id. Ut reprehenderit duis irure officia officia anim consectetur occaecat id et adipisicing qui.",
+                    "text": "Ea duis id quis cillum laborum commodo.",
                     "spans": []
                   }
                 ],
                 "summary": [
                   {
                     "type": "paragraph",
-                    "text": "Elit deserunt minim irure enim ea ut ad enim non ea. Est quis duis est velit sunt in mollit sunt cupidatat non do amet tempor commodo. Irure qui excepteur veniam.",
+                    "text": "Sit ut ex sint et nulla sit minim excepteur ullamco veniam esse dolore. Anim est adipisicing nisi mollit do in adipisicing sunt proident nostrud elit pariatur aute quis nulla.",
                     "spans": []
                   }
                 ],
                 "tools": [
                   {
                     "type": "paragraph",
-                    "text": "Eu sit consectetur id labore nulla sint dolor commodo ut labore.",
+                    "text": "Veniam veniam excepteur non aliqua magna aliquip amet nisi qui irure. Pariatur culpa in dolor elit officia adipisicing minim magna commodo esse nulla.",
                     "spans": []
                   }
                 ],
                 "github": {
                   "link_type": "Web",
-                  "url": "http://twitter.com"
+                  "url": "https://prismic.io"
                 },
                 "website": {
                   "link_type": "Web",
@@ -855,27 +907,27 @@
                 "name": [
                   {
                     "type": "paragraph",
-                    "text": "Occaecat deserunt magna esse officia consectetur nisi minim enim aliqua qui. Amet reprehenderit ipsum consequat mollit adipisicing nulla ut ut tempor tempor. Occaecat sit eu eu aute enim proident enim in irure laboris.",
+                    "text": "Sit laboris fugiat eu. Lorem occaecat laboris in esse sunt nostrud sint est dolor est amet commodo deserunt anim.",
                     "spans": []
                   }
                 ],
                 "summary": [
                   {
                     "type": "paragraph",
-                    "text": "Proident enim deserunt et nisi. Et deserunt dolor eiusmod fugiat ea Lorem elit quis anim adipisicing.",
+                    "text": "Exercitation ea tempor ea esse commodo ullamco labore velit duis cillum occaecat veniam id labore laboris. Fugiat exercitation non labore occaecat consequat laboris ex.",
                     "spans": []
                   }
                 ],
                 "tools": [
                   {
                     "type": "paragraph",
-                    "text": "Occaecat sunt magna ea elit enim officia enim et. Laborum sit qui consectetur dolor sunt. Consectetur incididunt ad magna ipsum consequat ea eu in cupidatat irure excepteur deserunt occaecat aute officia.",
+                    "text": "Laboris eiusmod labore do reprehenderit pariatur dolore pariatur pariatur dolor dolore ex sint incididunt tempor. Qui sit cillum aliqua fugiat commodo Lorem nostrud non eiusmod velit magna esse sint velit.",
                     "spans": []
                   }
                 ],
                 "github": {
                   "link_type": "Web",
-                  "url": "https://slicemachine.dev"
+                  "url": "http://google.com"
                 },
                 "website": {
                   "link_type": "Web",
@@ -888,28 +940,28 @@
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=900&h=500&fit=crop"
                 }
               },
               {
                 "name": [
                   {
                     "type": "paragraph",
-                    "text": "Magna ut laboris exercitation id. Ullamco exercitation officia est veniam commodo laboris.",
+                    "text": "Laboris in tempor laborum cupidatat laboris. Elit commodo elit aliqua.",
                     "spans": []
                   }
                 ],
                 "summary": [
                   {
                     "type": "paragraph",
-                    "text": "Sunt esse mollit eu tempor minim ea commodo fugiat qui laborum pariatur. Dolore est non esse incididunt ex laborum culpa quis voluptate do est.",
+                    "text": "Anim dolor incididunt quis Lorem qui est mollit commodo exercitation ullamco ullamco. Do nisi aliquip incididunt mollit sunt velit in ea id Lorem sit.",
                     "spans": []
                   }
                 ],
                 "tools": [
                   {
                     "type": "paragraph",
-                    "text": "Exercitation proident occaecat occaecat adipisicing occaecat sunt nisi velit dolore excepteur sunt. Culpa incididunt enim est pariatur aliquip officia cillum mollit nulla.",
+                    "text": "Id sint excepteur magna qui sit minim irure eiusmod consequat. Eiusmod id cupidatat fugiat deserunt eu anim quis voluptate pariatur sit.",
                     "spans": []
                   }
                 ],
@@ -928,7 +980,47 @@
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ullamco in aliqua non veniam. Minim nisi magna id cupidatat sint sunt. Ipsum sint id id laboris sunt do fugiat.",
+                    "spans": []
+                  }
+                ],
+                "summary": [
+                  {
+                    "type": "paragraph",
+                    "text": "Pariatur amet eu irure nulla ea fugiat.",
+                    "spans": []
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "paragraph",
+                    "text": "Aliqua occaecat elit elit incididunt quis.",
+                    "spans": []
+                  }
+                ],
+                "github": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "website": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
                 }
               }
             ],
@@ -936,15 +1028,29 @@
               "title": [
                 {
                   "type": "heading2",
-                  "text": "Evolve 24/365 paradigms",
+                  "text": "Grow magnetic relationships",
                   "spans": []
                 }
               ],
-              "uid": "redefine integrated web-readiness",
+              "uid": "iterate bleeding-edge supply-chains",
               "text": [
                 {
                   "type": "paragraph",
-                  "text": "Velit anim in veniam. Nisi ipsum occaecat irure ad. Irure adipisicing velit nisi minim tempor et consectetur nulla id fugiat proident aute consectetur sunt.",
+                  "text": "Nulla elit eiusmod et voluptate quis minim. Excepteur veniam fugiat excepteur ea proident dolore cillum reprehenderit culpa sint esse tempor sunt enim.",
+                  "spans": []
+                }
+              ],
+              "buttonGithub": [
+                {
+                  "type": "paragraph",
+                  "text": "Aute duis nulla irure eu qui fugiat eu labore cupidatat commodo magna laborum ex velit.",
+                  "spans": []
+                }
+              ],
+              "buttonWebsite": [
+                {
+                  "type": "paragraph",
+                  "text": "Amet pariatur consequat laboris consequat excepteur aliquip incididunt adipisicing consectetur sint id elit. Culpa laborum ullamco sunt et sit ut.",
                   "spans": []
                 }
               ]

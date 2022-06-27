@@ -2,14 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Button from "./Button";
-
-
-interface NavMenuProps {
-  navItem: any
-  isMobile: boolean
-  menuIsOpen: boolean
-}
+import Button from "../Button";
+import { NavMenuProps } from "../../types/Header";
 
 
 
@@ -28,7 +22,7 @@ const variants = {
   closed: { opacity: 0, x: "100%" },
 }
 
-const NavMenu = ({ isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Element => {
+const Menu = ({ scrolled, isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Element => {
 
 
   if(isMobile){
@@ -37,7 +31,7 @@ const NavMenu = ({ isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Element =>
 				initial={isMobile ? {opacity: 0, x: "100%" } : {}}
 				animate={menuIsOpen ? "open" : "closed"}
 				variants={isMobile ? variants : {}}
-				className={`text-custom-white -z-30  h-[101vh]  absolute   min-w-[60vw] bg-custom-tertiary flex-col gap-[3vh] p-12   flex justify-center items-start top-0 right-0`}
+				className={`${scrolled === 'no-scroll' ? 'bg-custom-primary' : 'bg-inherit'} text-inherit  -z-30  h-[101vh]  absolute   min-w-[60vw]  flex-col gap-[3vh] p-12   flex justify-center items-start top-0 right-0`}
 				>
 
             {navItem.map((item: any, i: number)=>{
@@ -47,7 +41,7 @@ const NavMenu = ({ isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Element =>
               }
                 return(
                   <motion.li key={i} className="w-full" variants={listItem} >
-                        <Button actionTarget={item.target}    classList={`relative justify-start z-10 ${variableClass}`} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
+                        <Button actionTarget={item.target} file={item.file}   classList={`relative justify-start z-10 ${variableClass}`} style={item.style !== null ? item.style : 'default'}   type={item.action !== null ? item.action : 'link'} content={item.content} />
                   </motion.li>
                 )
             })}
@@ -73,4 +67,4 @@ const NavMenu = ({ isMobile, menuIsOpen,  navItem}:NavMenuProps): JSX.Element =>
   
 };
 
-export default NavMenu;
+export default Menu;

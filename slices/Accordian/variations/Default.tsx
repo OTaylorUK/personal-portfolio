@@ -1,37 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { PrismicRichText } from '@prismicio/react'
-import * as prismicT from "@prismicio/types";
 import {
 	SliceComponentProps,
 } from "@prismicio/react";
-import Container from '../../../components/Container';
-import SectionHeader from '../../../components/SectionHeader';
+import Container from '../../../components/Layout/Container';
 import WorkSlide from '../../../components/WorkSlide';
-import { AnimatePresence, motion } from "framer-motion"
-import SectionText from '../../../components/SectionText';
-import AnimationWrapper from '../../../components/AnimationWrapper';
-
-type AccordianSlice = prismicT.Slice<
-	"Accordian",
-	{
-    title: prismicT.RichTextField,
-    text: prismicT.RichTextField,
-    uid: prismicT.KeyTextField;
-	}
->;
+import {  motion } from "framer-motion"
+import AnimationWrapper from '../../../components/Helpers/AnimationWrapper';
+import { AccordianDefault } from '../../../types/AccordianSlice';
 
 
 
-const Default = ({ slice,index  }: SliceComponentProps<AccordianSlice>) => {
+const Default = ({ slice,index  }: SliceComponentProps<AccordianDefault>) => {
 
   const {primary,items, slice_type} = {...slice}
   const {title,text, uid} = primary;
 
-  let isOdd = true;
-
-  if(index % 2 === 0){
-    isOdd = false;
-  }
+  
 
   const [selectedTab, setSelectedTab] = useState(items[0])
 

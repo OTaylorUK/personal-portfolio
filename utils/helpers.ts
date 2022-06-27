@@ -6,6 +6,11 @@ export const capitalizeString = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
+export const numIsOdd = (index: number) => {
+	return index % 2 === 0 ? false : true
+}
+
+
 export const resolveVariation = (variation: string, SectionComponents: any) => {
 	const Section = SectionComponents[capitalizeString(variation)]
   

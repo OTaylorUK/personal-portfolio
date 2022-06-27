@@ -1,44 +1,17 @@
 
 import Head from "next/head";
-import React, { FC, Fragment, ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import ColourPalette from "./ColourPalette";
-import Header from "./Header";
-import * as prismicT from "@prismicio/types";
-import Footer from "./Footer";
+import React, { FC,  useCallback,  useRef, useState } from "react";
+import {Header} from "../Header"
+import Footer from "../Footer";
 import { useResizeDetector } from 'react-resize-detector';
-import Loading from "./Loading";
+import Loading from "../Helpers/Loading";
 import PageContent from "./PageContent";
-
-interface LayoutProps {
-  children?: ReactNode,
-  header: {
-    logoAction: string,
-    logoContent:  prismicT.RichTextField,
-    logoTarget: string,
-    navItem: any[]
-  },
-  footer: {
-    copyright: string,
-    text:  prismicT.RichTextField,
-    title:  prismicT.RichTextField,
-    altLinks:  prismicT.RichTextField,
-    alternativeContact:  any[],
-  }
-  seo: {
-    title: string,
-    description: string,
-    ogImage: {
-      url?: string
-    },
-  };
-}
+import { LayoutProps } from "../../types/Layout";
 
 const Layout: FC<LayoutProps> = ({ children, seo, header,footer }) => {
 
   const footerRef = useRef<HTMLDivElement>(null);
-
   const [isLoading, setIsLoading] = useState(true)
-
   const [footerHeight, setFooterHeight] = useState(0)
 
 	const onResize = useCallback(() => {
@@ -56,17 +29,14 @@ const Layout: FC<LayoutProps> = ({ children, seo, header,footer }) => {
         }
 			}
       setFooterHeight(footerHeight)
-
     }
-
 	}, []);
 
 	const { ref } = useResizeDetector({onResize});
-
  
 
   return (
-    <Fragment>
+    <>
       <Head>
         <title>{seo.title}</title>
         <meta charSet="utf-8" />
@@ -105,7 +75,7 @@ const Layout: FC<LayoutProps> = ({ children, seo, header,footer }) => {
 
       <Footer ref={footerRef} {...footer}  isFixed={footerHeight === 0 ? false : true} />
       
-    </Fragment>
+    </>
   )
 };
 

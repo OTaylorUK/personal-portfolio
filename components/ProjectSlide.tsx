@@ -1,38 +1,17 @@
 
-import Head from "next/head";
-import React, { FC, Fragment, ReactNode } from "react";
-import ColourPalette from "./ColourPalette";
-import Header from "./Header";
-import * as prismicT from "@prismicio/types";
+import React from "react";
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
-import SectionText from "./SectionText";
-import SectionHeader from "./SectionHeader";
-import AnimationWrapper from "./AnimationWrapper";
-import VariableContainer from "./VariableContainer";
+import AnimationWrapper from "./Helpers/AnimationWrapper";
+import VariableContainer from "./Layout/VariableContainer";
+import Button from "./Button";
+import { ProjectProps } from "../types/ProjectSlice";
+import { numIsOdd } from "../utils/helpers";
 
 
-interface ProjectProps {
-  index: number
-  github: any
-  image: any
-  name:  any,
-  summary:  any,
-  tools:  any,
-  website:  any,
-  
-}
+const ProjectSlide = ({github,image,name,summary,tools,website,index, buttonGithub, buttonWebsite}:ProjectProps): JSX.Element => {
+  const isOdd = numIsOdd(index)
 
-
-
-const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectProps): JSX.Element => {
-    let isOdd = true;
-
-    if(index % 2 === 0){
-        isOdd = false;
-    }
-  
   return (
 
     <VariableContainer containerClass='flex flex-col lg:flex-row  gap-4  justify-center overflow-hidden group'>
@@ -62,7 +41,7 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
               /> 
         </AnimationWrapper>
         <AnimationWrapper 
-          innerClass={`flex-1`}
+          innerClass={`flex-1 relative`}
           variantType={'alt'}
         >
           <Image
@@ -73,6 +52,15 @@ const ProjectSlide = ({github,image,name,summary,tools,website,index}:ProjectPro
               height={image?.dimensions?.height}
               layout={'responsive'}
           />
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute w-full h-full z-10 top-0 left-0 flex flex-col justify-center items-center p-4 gap-6">
+           
+           {github.url && <Button link={github}  style="ghost-filled"  classList={` z-10 `}   type={'link'} content={buttonGithub} />}
+            
+            {website.url && <Button link={website}  style="ghost-filled"  classList={` z-10 `}   type={'link'} content={buttonWebsite} />}
+
+            <div className="absolute w-full h-full -z-10 top-0 left-0 bg-custom-white opacity-40">
+            </div>
+          </div>
         </AnimationWrapper>
 
       </div>

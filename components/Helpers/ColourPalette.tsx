@@ -1,10 +1,5 @@
 import React, { FC } from "react";
-
-interface ColourProps {
-	palette: {
-		colour: any[]
-	}
-}
+import { ColourProps } from "../../types/Helpers";
 
 const createCSSVar = (type:string, name: string,  value: string) => {
 	return `--theme-${type}-${name}:${value};`;

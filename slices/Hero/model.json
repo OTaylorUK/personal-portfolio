@@ -49,6 +49,13 @@
             "label": "Button Style",
             "placeholder": ""
           }
+        },
+        "buttonTarget": {
+          "type": "Text",
+          "config": {
+            "label": "Button Target",
+            "placeholder": ""
+          }
         }
       },
       "items": {

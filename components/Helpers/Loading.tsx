@@ -1,20 +1,13 @@
 
 
-import React, { FC, useEffect, useState,  } from "react";
-import { PrismicRichText } from '@prismicio/react'
-import * as prismicT from "@prismicio/types";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { getIndex, useFlubber } from "../utils/use-flipper";
-import { heart, star } from "../utils/paths";
-
-interface LoadingProps {
-  time: number
-  setIsLoading: any
-}
+import React, { useEffect, useState,  } from "react";
+import { motion, useMotionValue,  animate } from "framer-motion";
+import {  useFlubber } from "../../utils/use-flipper";
+import { heart, star } from "../../utils/paths";
+import { LoadingProps } from "../../types/Helpers";
 
 const paths = [star, heart];
 const colors = ["#ffffff", "#ffffff"];
-
 
 const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
   const [pathIndex, setPathIndex] = useState(0);

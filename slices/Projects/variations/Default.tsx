@@ -1,47 +1,17 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
-import * as prismicT from "@prismicio/types";
 import {
 	SliceComponentProps,
 } from "@prismicio/react";
-import Container from '../../../components/Container';
-import SectionHeader from '../../../components/SectionHeader';
+import Container from '../../../components/Layout/Container';
 import ProjectSlide from '../../../components/ProjectSlide';
-import SectionText from '../../../components/SectionText';
-import AnimationWrapper from '../../../components/AnimationWrapper';
+import AnimationWrapper from '../../../components/Helpers/AnimationWrapper';
+import { ProjectDefault } from '../../../types/ProjectSlice';
 
-type ProjectSlice = prismicT.Slice<
-	"project",
-	{
-		title: prismicT.RichTextField;
-		text: prismicT.RichTextField;
-		uid: prismicT.KeyTextField;
-
-	}
->;
-
-// interface ProjectProps {
-//   github: prismicT.AnyRegularField
-//   image: prismicT.AnyRegularField
-//   name:  prismicT.AnyRegularField,
-//   summary:  prismicT.AnyRegularField,
-//   tools:  prismicT.AnyRegularField,
-//   website:  prismicT.AnyRegularField,
-  
-// }
-
-
-const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
+const Default = ({ slice,index }: SliceComponentProps<ProjectDefault>) => {
 
   const {primary,items, slice_type} = {...slice}
-  const {title, text, uid} = primary;
-
-  let isOdd = true;
-
-  if(index % 2 === 0){
-    isOdd = false;
-  }
-
+  const {title, text, uid, buttonGithub, buttonWebsite} = primary;
 
   return(
     <section 
@@ -84,6 +54,8 @@ const Default = ({ slice,index }: SliceComponentProps<ProjectSlice>) => {
               summary={project.summary}
               tools={project.tools}
               website={project.website}
+              buttonGithub={buttonGithub}
+              buttonWebsite={buttonWebsite}
               key={i}
             />
           )}

@@ -1,38 +1,8 @@
 
-import Head from "next/head";
-import React, { FC, Fragment, ReactNode } from "react";
-import { outputVariableString } from "../utils/helpers";
-import ColourPalette from "./ColourPalette";
-import Header from "./Header";
+import React, { FC } from "react";
+import { outputVariableString } from "../../utils/helpers";
 import { motion, Variants } from "framer-motion";
-
-
-interface ContainerProps {
-  children?: ReactNode,
-  settings?: {
-      outer?: {
-        align?: string ,
-        justify?: string ,
-        padding?: string ,
-      },
-      inner?: {
-        align?: string ,
-        gap?: string ,
-        padding?: string ,
-        width?: string
-        bg?: string
-      }
-      animation?:{
-        initialState?: "onscreen" | "offscreen",
-        inViewAmount?: number,
-        bounce?: number,
-        delay?: number,
-        duration?: number,
-      }
-  }
-}
-
-
+import { ContainerProps } from "../../types/Layout";
 
 const animations: Variants = {
   offscreen: {
@@ -46,9 +16,7 @@ const animations: Variants = {
   }
 };
 
-
 const Container: FC<ContainerProps> = ({ children, settings }) => {
-  
 
     const { 
       inner = {

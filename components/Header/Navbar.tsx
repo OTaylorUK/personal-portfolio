@@ -2,24 +2,10 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import Button from "./Button";
-import MenuToggle from "./MenuToggle";
-import NavMenu from "./NavMenu";
-
-
-interface NavbarProps {
-  navItem: any
-  scrolled: string
-  menuIsOpen: boolean
-  isMobile: boolean
-  setMenuIsOpen: any
-  logo: {
-    target: string
-    action: string
-    content: any
-  }
-}
-
+import Button from "../Button";
+import MenuToggle from "./Toggle";
+import NavMenu from "./Menu";
+import { NavbarProps } from "../../types/Header";
 
 const container: Variants = {
   offscreen: {
@@ -52,7 +38,7 @@ const Navbar = ({ scrolled, navItem, logo,  isMobile, menuIsOpen, setMenuIsOpen}
     <>
       <motion.nav
       
-        className=" z-0  px-6 lg:px-10 py-5 overflow-hidden  container max-w-screen-xl m-auto   flex flex-row items-center   h-full top-[0] transition-[top] duration-300 justify-between"
+        className=" z-0 bg-inherit px-6 lg:px-10 py-5 overflow-hidden  container max-w-screen-xl m-auto   flex flex-row items-center   h-full top-[0] transition-[top] duration-300 justify-between"
         initial="offscreen"
         whileInView="onscreen"
         animate={isMobile ?  "offscreen" :  "onscreen"}
@@ -67,9 +53,9 @@ const Navbar = ({ scrolled, navItem, logo,  isMobile, menuIsOpen, setMenuIsOpen}
               </motion.div>
             </div>
         
-            <NavMenu navItem={navItem} isMobile={isMobile} menuIsOpen={menuIsOpen}  />
+            <NavMenu scrolled={scrolled} navItem={navItem} isMobile={isMobile} menuIsOpen={menuIsOpen}  />
 
-				    <MenuToggle scrolled={scrolled} menuOpen={menuIsOpen} toggle={() => setMenuIsOpen((prevState: any) => !prevState)} />
+				    <MenuToggle menuOpen={menuIsOpen} toggle={() => setMenuIsOpen((prevState: any) => !prevState)} />
 
 
       </motion.nav>

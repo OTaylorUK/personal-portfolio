@@ -4,24 +4,7 @@ import React, { FC } from "react";
 import * as prismicT from "@prismicio/types";
 import {Link as ScrollLink} from 'react-scroll'
 import { PrismicRichText } from '@prismicio/react';
-
-
-interface ButtonProps {
-  currentPage?: string,
-  target?: string,
-  type: string,
-  actionTarget?: string,
-  style: string,
-  classList?: string,
-  textFirst?: boolean,
-  eventHandler?: any
-  icon?: any
-  link?: any,
-  text?: prismicT.AnyRegularField,
-  content: prismicT.RichTextField 
-}
-
-// { currentPage = null , btnContext = null, target='_blank', classList ='', type='button', style = 'primary', link, text ='', icon = {}, textFirst = true}
+import { ButtonProps } from '../types/Button';
 
 const formatButtonLink = (link: any) => {
 
@@ -77,7 +60,7 @@ const formatButtonContent = (content: prismicT.RichTextField | null ) : JSX.Elem
   )
 }
 
-const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList ='', type='button', style = 'primary', link = null, text ='', icon = {}, eventHandler, textFirst = true, content, actionTarget}) => {
+  const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', classList ='', type='button', style = 'primary', link = null, text ='', icon = {}, eventHandler, textFirst = true, content, actionTarget}) => {
 
 
   let isCurrentPage = false;
@@ -97,6 +80,9 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
       break;
     case 'ghost-small':
       variableClass = 'btn-ghost-small'
+      break;
+    case 'ghost-filled':
+      variableClass = 'btn-ghost-filled'
       break;
     default:
       variableClass = 'btn-default'
@@ -127,7 +113,7 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
               spy={true} 
               smooth={true}
               key={`btn`} 
-              className={buttonClass}
+              className={`xxcwdfwe ${buttonClass} `}
               >
               {formatButtonContent(content)}
             </ScrollLink>
@@ -135,6 +121,13 @@ const Button: FC<ButtonProps> = ({ currentPage = '' , target='_blank', classList
         }else{
           return null
         }
+        break;
+      case 'download':
+        return(
+          <a key={`btn`} href={file?.url} target="_blank" className={buttonClass} rel="noreferrer">
+          {formatButtonContent(content)}
+        </a>
+        )
         break;
       default:
         return(

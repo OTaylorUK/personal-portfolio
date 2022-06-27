@@ -59,6 +59,8 @@ const ContactForm = (): JSX.Element => {
                     if(recaptchaRef.current !== null){
                         const token = await recaptchaRef.current.executeAsync();
 
+                        console.log(token);
+                        
                         await axios({
                             method: "POST",
                             url: "/api/recaptcha",

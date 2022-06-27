@@ -1,24 +1,8 @@
 
 
-import React, { FC,  } from "react";
-import { PrismicRichText } from '@prismicio/react'
-import * as prismicT from "@prismicio/types";
+import React from "react";
 import { motion, Variants } from "framer-motion";
-
-type types = "alt" | "default" 
-
-
-interface AnimationWrapperProps {
-    children: JSX.Element | JSX.Element[] ,
-    innerClass?: string| null | undefined
-    type?: string| null | undefined
-    variantType?: types
-    settings?: {
-      bounce?: number,
-      delay?: number,
-      duration?: number,
-    }
-}
+import { AnimationWrapperProps } from "../../types/Helpers";
 
 
 const AnimationWrapper = ({ type = 'default', variantType = 'default', innerClass = 'flex flex-col gap-2' , children, settings}:AnimationWrapperProps): JSX.Element => {

@@ -5,6 +5,7 @@ import * as prismicT from "@prismicio/types";
 import {Link as ScrollLink} from 'react-scroll'
 import { PrismicRichText } from '@prismicio/react';
 import { ButtonProps } from '../types/Button';
+import { useAnalyticsEvent } from '../hooks/useAnalytics';
 
 const formatButtonLink = (link: any) => {
 
@@ -63,6 +64,8 @@ const formatButtonContent = (content: prismicT.RichTextField | null ) : JSX.Elem
 const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', classList ='', type='button', style = 'primary', link = null, text ='', icon = {}, eventHandler, textFirst = true, content, actionTarget}) => {
 
 
+  const { trackCustomEvent }  = useAnalyticsEvent();
+
   let isCurrentPage = false;
 
 
@@ -91,6 +94,12 @@ const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', cla
 
   const buttonClass = classList.concat(` ${isCurrentPage ? 'is-current-page' : ''} btn ${variableClass}`)
 
+
+  const triggerEvent = () => {
+      trackCustomEvent({eventName:'clicked_download_cv', 
+      eventTitle:'download_cv'
+      });
+  }
 
   if(type === 'link' && link){
     const {btnHref } = formatButtonLink(link)
@@ -126,7 +135,7 @@ const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', cla
         console.log(file);
         
         return(
-          <a key={`btn`} href={file?.url} target="_blank" className={buttonClass} rel="noreferrer">
+          <a key={`btn`} onClick={() => triggerEvent()} href={file?.url} target="_blank" className={buttonClass} rel="noreferrer">
           {formatButtonContent(content)}
         </a>
         )

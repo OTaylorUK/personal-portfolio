@@ -35,19 +35,18 @@ const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
   return (
     <>
        <div className="fixed top-0 left-0 z-50 h-full w-full bg-custom-primary text-custom-white flex justify-center items-center flex-col gap-4 text-center" style={{backgroundColor: '#181433'}}>
+        
        <svg  width="70" height="70">
-          <rect width="70" height="70" rx="15" fill="url(#paint0_linear_72_56)" />
-          <linearGradient
-            id="paint0_linear_72_56"
-            x1="-7.18543"
-            y1="-12.9801"
-            x2="105.653"
-            y2="8.95485"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#FB4EFF" />
-            <stop offset="1" stopColor="#6C70E4" />
+          <rect width="70" height="70" rx="15" fill="url(#paint0_linear_89_747)" />
+    
+
+
+          <linearGradient id="paint0_linear_89_747" x1="23.4954" y1="6.41668" x2="69.4088" y2="6.95397" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#E7017A"/>
+          <stop offset="1" stopColor="#DF4A1F"/>
           </linearGradient>
+
+
           <path
             d="M35 21C27.1833 21 20.1167 24.1667 15 29.3L35 49L55 29.3C52.3798 26.6641 49.2633 24.5734 45.8305 23.1488C42.3977 21.7241 38.7167 20.9938 35 21Z"
             fill="#181433"

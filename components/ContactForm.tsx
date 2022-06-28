@@ -58,9 +58,6 @@ const ContactForm = (): JSX.Element => {
 
                     if(recaptchaRef.current !== null){
                         const token = await recaptchaRef.current.executeAsync();
-
-                        console.log(token);
-                        
                         await axios({
                             method: "POST",
                             url: "/api/recaptcha",
@@ -70,10 +67,7 @@ const ContactForm = (): JSX.Element => {
                             withCredentials: false
                         }).then((response) => {
 
-                            console.log(response.data);
-                            
                             if (response.data.success) {
-
                                 const sendValues = {...values, date: new Date()}
                                 
                                 emailjs.send("service_5qfjjtl", "template_b8eywuu", sendValues, process.env.NEXT_PUBLIC_EMAILJS_USER)

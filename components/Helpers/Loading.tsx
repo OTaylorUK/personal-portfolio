@@ -1,15 +1,12 @@
-
-
-import React, { useEffect, useState,  } from "react";
-import { motion, useMotionValue,  animate } from "framer-motion";
-import {  useFlubber } from "../../utils/use-flipper";
-import { heart, star } from "../../utils/paths";
-import { LoadingProps } from "../../types/Helpers";
+import { animate, motion, useMotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
+import { heart, star } from "../../common/paths";
+import { LoadingProps } from "../../common/types";
+import { useFlubber } from "../../common/use-flipper";
 
 const paths = [star, heart];
-const colors = ["#ffffff", "#ffffff"];
 
-const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
+const Loading = ({ time, setIsLoading }: LoadingProps): JSX.Element => {
   const [pathIndex, setPathIndex] = useState(0);
   const progress = useMotionValue(pathIndex);
   const path = useFlubber(progress, paths);
@@ -20,7 +17,6 @@ const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
       ease: "easeInOut",
       onComplete: () => {
         if (pathIndex === paths.length - 1) {
-          console.log("done");
           setIsLoading(false)
         } else {
           setPathIndex(pathIndex + 1);
@@ -34,16 +30,16 @@ const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
 
   return (
     <>
-       <div className="fixed top-0 left-0 z-50 h-full w-full bg-custom-primary text-custom-white flex justify-center items-center flex-col gap-4 text-center" style={{backgroundColor: '#181433'}}>
-        
-       <svg  width="70" height="70">
+      <div className="fixed top-0 left-0 z-50 h-full w-full bg-custom-primary text-custom-white flex justify-center items-center flex-col gap-4 text-center" style={{ backgroundColor: '#181433' }}>
+
+        <svg width="70" height="70">
           <rect width="70" height="70" rx="15" fill="url(#paint0_linear_89_747)" />
-    
+
 
 
           <linearGradient id="paint0_linear_89_747" x1="23.4954" y1="6.41668" x2="69.4088" y2="6.95397" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#E7017A"/>
-          <stop offset="1" stopColor="#DF4A1F"/>
+            <stop stopColor="#E7017A" />
+            <stop offset="1" stopColor="#DF4A1F" />
           </linearGradient>
 
 
@@ -53,12 +49,12 @@ const Loading = ({time,setIsLoading}:LoadingProps): JSX.Element => {
             fillOpacity="0.4"
           />
           <g>
-            <motion.path  style={{fill: '#181433 !important'}}  d={path} />
+            <motion.path style={{ fill: '#181433 !important' }} d={path} />
           </g>
         </svg>
-        <span  style={{color: '#ffffff'}}>Loading...</span>
-       </div>
-       </>
+        <span style={{ color: '#ffffff' }}>Loading...</span>
+      </div>
+    </>
   );
 };
 

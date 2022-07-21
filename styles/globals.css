@@ -132,7 +132,7 @@ a {
 	}
 
 	.large-text{
-		 @apply text-lg leading-relaxed
+		 @apply text-base lg:text-lg leading-relaxed
 	}
 
 
@@ -240,6 +240,10 @@ a {
 
 	.page-container{
 		@apply  h-full;
+	}
+
+	.content-container{
+		@apply min-h-[30vh] container px-4  lg:px-12 flex flex-col items-start gap-20
 	}
 
 

@@ -17,6 +17,7 @@
     "@prismicio/react": "^2.4.1",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "axios": "^0.27.2",
+    "cssnano": "^5.1.12",
     "flubber": "^0.4.2",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.11",

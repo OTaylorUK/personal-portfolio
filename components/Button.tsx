@@ -1,77 +1,39 @@
-import Link from 'next/link'
-import Svg from 'react-inlinesvg';
-import React, { FC } from "react";
+import { PrismicLink, PrismicRichText } from '@prismicio/react';
 import * as prismicT from "@prismicio/types";
-import {Link as ScrollLink} from 'react-scroll'
-import { PrismicRichText } from '@prismicio/react';
-import { ButtonProps } from '../types/Button';
+import { FC } from "react";
+import Svg from 'react-inlinesvg';
+import { Link as ScrollLink } from 'react-scroll';
+import { ButtonProps } from '../common/types';
 import { useAnalyticsEvent } from '../hooks/useAnalytics';
 
-const formatButtonLink = (link: any) => {
-
-  const retSettings = {
-    target: '_self',
-    btnHref: '',
-    currentPage: '',
-    isCurrentPage: false,
-  }
-  
-  switch (link?.link_type.toLowerCase()) {
-    case 'web':
-      if(link?.url){
-        retSettings.btnHref = link?.url
-        retSettings.target = '_blank'
-      }
-      break;
-  
-    case 'document':
-      if(link?.slug){
-        if (link?.slug !== 'home-page') {
-          retSettings.btnHref = `/${link?.slug}`
-        }else{
-          retSettings.btnHref = `/`
-        }
-        if(retSettings.currentPage === retSettings.btnHref){
-          retSettings.isCurrentPage = true
-        }
-        retSettings.target = '_self'
-      }
-
-      break;
-  }
-
-  return retSettings
-
-}
-
-const formatButtonContent = (content: prismicT.RichTextField | null ) : JSX.Element | null => {
+const formatButtonContent = (content: prismicT.RichTextField | null): JSX.Element | null => {
 
   return (
-    <PrismicRichText 
-        field={content}
-        components={{
-          paragraph: ({ children }) =>  <>{children}</>,
-          image: ({node}) => {
-            return(
-              <Svg className="icon" no-cors="true" src={node?.url} width={node.dimensions?.width} height={node.dimensions?.height} title={node?.alt ? node?.alt : 'Svg icon inside a button' } />
-            )
-          },
-        }}
-      />  
+    <PrismicRichText
+      field={content}
+      components={{
+        paragraph: ({ children }) => <>{children}</>,
+        image: ({ node }) => {
+          return (
+            <Svg className="icon" no-cors="true" src={node?.url} width={node.dimensions?.width} height={node.dimensions?.height} title={node?.alt ? node?.alt : 'Svg icon inside a button'} />
+          )
+        },
+      }}
+    />
   )
 }
 
-const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', classList ='', type='button', style = 'primary', link = null, text ='', icon = {}, eventHandler, textFirst = true, content, actionTarget}) => {
+const Button = ({ file, target='_self', classList ='', actionTarget, type='button', style = 'default', link = null, eventHandler, textFirst = true, content}:ButtonProps): JSX.Element => {
 
+  const btnStyle = style!.toLowerCase()
 
-  const { trackCustomEvent }  = useAnalyticsEvent();
+  const { trackCustomEvent } = useAnalyticsEvent();
 
   let isCurrentPage = false;
 
-
   let variableClass = '';
 
-  switch (style.toLowerCase()) {
+  switch (btnStyle) {
     case 'text':
       variableClass = 'btn-text'
       break;
@@ -96,60 +58,59 @@ const Button: FC<ButtonProps> = ({ file, currentPage = '' , target='_blank', cla
 
 
   const triggerEvent = () => {
-      trackCustomEvent({eventName:'clicked_download_cv', 
-      eventTitle:'download_cv'
-      });
+    trackCustomEvent({
+      eventName: 'clicked_download_cv',
+      eventTitle: 'download_cv'
+    });
   }
 
-  if(type === 'link' && link){
-    const {btnHref } = formatButtonLink(link)
+
+  if (type === 'link' && link) {
     return (
-      <Link  href={btnHref}>
-        <a  key={`link`} className={buttonClass} target={target}>{formatButtonContent(content)}</a>
-        {/* <a  onClick={handleClick} key={`link`} className={buttonClass} target={target}>{buttonContent}</a> */}
-      </Link>
+      <PrismicLink key={`link`} className={buttonClass} field={link}>
+        {formatButtonContent(content)}
+      </PrismicLink>
     )
-  }else{
-    
+  } else {
+
     // ScrollLink
     switch (type) {
       case 'scroll-to':
-        if(actionTarget){
-          return(
-            <ScrollLink 
+        if (actionTarget) {
+          return (
+            <ScrollLink
               offset={-120}
-              to={actionTarget} 
-              spy={true} 
+              to={actionTarget}
+              spy={true}
               smooth={true}
-              key={`btn`} 
-              className={`xxcwdfwe ${buttonClass} `}
-              >
+              key={`btn`}
+              className={` ${buttonClass} `}
+              onSetActive={eventHandler}
+            >
               {formatButtonContent(content)}
             </ScrollLink>
           )
-        }else{
-          return null
+        } else {
+          return <></>
         }
         break;
       case 'download':
-        console.log(file);
-        
-        return(
+        return (
           <a key={`btn`} onClick={() => triggerEvent()} href={file?.url} target="_blank" className={buttonClass} rel="noreferrer">
-          {formatButtonContent(content)}
-        </a>
+            {formatButtonContent(content)}
+          </a>
         )
         break;
       default:
-        return(
+        return (
           <button key={`btn`} className={buttonClass}>
             {formatButtonContent(content)}
           </button>
         )
         break;
     }
-  
-    }
+
+  }
 }
 
 export default Button

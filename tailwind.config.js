@@ -23,8 +23,6 @@ module.exports = {
       fontFamily: {
         'sans': ['"SpaceGrotesk"', ...defaultTheme.fontFamily.sans],
         'inter': ['"Inter"', ...defaultTheme.fontFamily.sans],
-        // 'serif': ['"EB Garamond"', ...defaultTheme.fontFamily.serif],
-        // 'handwriting': ['"Comforter Brush"', ...defaultTheme.fontFamily.mono],
       },
       animation: {
         'text':'text 5s ease infinite',

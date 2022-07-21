@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { resolveVariation } from '../../utils/helpers';
+import { resolveVariation } from "../../common/utils";
 import * as SectionComponents from './variations'
 
 interface LayoutProps {

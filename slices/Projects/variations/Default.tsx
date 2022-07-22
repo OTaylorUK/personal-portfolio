@@ -13,7 +13,7 @@ export const defaultAnimations: Variants = {
   onscreen: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.35
+      staggerChildren: 0.25
     }
   }
 }

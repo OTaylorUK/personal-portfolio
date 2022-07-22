@@ -3,7 +3,14 @@ import { PrismicRichText } from "@prismicio/react";
 import React from "react";
 import { FooterProps } from "../common/types";
 import { findAndReplaceHolder } from "../common/utils";
-import ContactForm from "./ContactForm";
+// import ContactForm from "./ContactForm";
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+
+const ContactForm = dynamic(() => import('./ContactForm'), {
+    suspense: true,
+  })
 
 const Footer = React.forwardRef<HTMLDivElement, FooterProps>(({ copyright, text, title, altLinks, alternativeContact, isFixed }, ref) => {
     const updatedCopyright = findAndReplaceHolder({ 'year': new Date().getFullYear() }, copyright)
@@ -28,8 +35,9 @@ const Footer = React.forwardRef<HTMLDivElement, FooterProps>(({ copyright, text,
                                 }}
                             />
                         </div>
-
-                        <ContactForm />
+                        <Suspense fallback={`Loading...`}>
+                            <ContactForm />
+                        </Suspense>
                     </div>
 
                     <div className="flex flex-col gap-14">
